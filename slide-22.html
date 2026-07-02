@@ -103,6 +103,22 @@
   }
   .rule-text .hl-suporte  { color:#FDA4AF; font-weight:800; }
   .rule-text .hl-demandas { color:#6EE7B7; font-weight:800; }
+
+  /* ── WhatsApp (Canal SFC) ── */
+  .wa-callout {
+    display:flex; align-items:center; gap:14px; margin-top:14px;
+    padding:13px 18px; border-radius:14px;
+    background:#ECFDF5; border:1px solid #A7F3D0;
+  }
+  .mirror-card.right .wa-callout { flex-direction:row-reverse; text-align:right; }
+  .wa-icon {
+    width:42px; height:42px; flex-shrink:0; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 14px -4px rgba(37,211,102,.55);
+  }
+  .wa-icon i { color:#fff; font-size:23px; }
+  .wa-callout p { font-size:16px; color:#374151; line-height:1.38; margin:0; }
+  .wa-callout p strong { color:#065F46; font-weight:700; }
 </style>
 </head>
 <body>
@@ -163,6 +179,10 @@
           <div class="mc-feat"><span class="flabel">Você <strong>abre o chamado</strong></span><span class="fico">1</span></div>
           <div class="mc-feat"><span class="flabel">A <strong>GPF</strong> faz a triagem e atende</span><span class="fico">2</span></div>
           <div class="mc-feat"><span class="flabel">Acompanhe <strong>até a resolução</strong></span><span class="fico">3</span></div>
+        </div>
+        <div class="wa-callout">
+          <div class="wa-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <p>Mantemos também um <strong>grupo no WhatsApp</strong> para suporte rápido, dentro do <strong>Canal SFC</strong>.</p>
         </div>
       </div>
     </div>

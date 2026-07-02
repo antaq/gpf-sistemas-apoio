@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SAI — Sistema de Acompanhamento de Investimentos</title>
+<title>CEF — Controle de Equipamentos de Fiscalização</title>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
@@ -19,44 +19,47 @@
   .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
   .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
 
+  /* Cartões */
   .info-card {
-    background:#F8FAFC; border-radius:12px; padding:26px 32px;
-    box-shadow:0 2px 6px rgba(0,0,0,.06);
+    background:#F8FAFC; border-left:5px solid #0066CC; border-radius:12px;
+    padding:22px 30px; box-shadow:0 2px 6px rgba(0,0,0,.06);
   }
-  .info-card p.card-t { font-family:'Montserrat', sans-serif; font-weight:700; color:#003366; font-size:25px; margin-bottom:10px; display:flex; align-items:center; gap:16px; }
-  .info-card p.card-d { color:#4B5563; font-size:20px; line-height:1.55; }
-  .icon-badge {
-    width:44px; height:44px; border-radius:11px; flex-shrink:0;
-    display:flex; align-items:center; justify-content:center; font-size:18px; color:#fff;
-    background:linear-gradient(135deg,#0066CC 0%,#003366 100%);
+  .info-card:nth-of-type(2) { border-left-color:#003366; }
+  .info-card .card-title {
+    font-family:'Montserrat', sans-serif; font-weight:700; color:#003366;
+    font-size:24px; margin-bottom:9px; display:flex; align-items:center; gap:14px;
   }
+  .info-card .card-title i {
+    flex-shrink:0; width:44px; height:44px; display:inline-flex;
+    align-items:center; justify-content:center; border-radius:10px;
+    background:#EAF2FD; color:#0066CC; font-size:18px;
+  }
+  .info-card p.card-desc { color:#4B5563; font-size:20px; line-height:1.5; }
 
-  /* Mockup de tela (KIT) */
-  .browser-mock { border-radius:14px; overflow:hidden; border:1px solid #E5E7EB;
-    box-shadow:0 16px 30px -10px rgba(0,0,0,.28); background:#fff; display:flex; flex-direction:column; }
-  .bm-bar { display:flex; align-items:center; gap:14px; padding:12px 18px; background:#E8EEF5; border-bottom:1px solid #D5DFEA; }
-  .bm-dots { display:flex; gap:7px; }
-  .bm-dot { width:13px; height:13px; border-radius:50%; }
-  .bm-url { flex:1; background:#fff; border:1px solid #D5DFEA; border-radius:999px;
-    padding:6px 16px; font-family:'Montserrat',sans-serif; font-size:13px; color:#64748B;
-    display:flex; align-items:center; gap:8px; }
-  .bm-body { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:16px; padding:44px 24px; background:linear-gradient(135deg,#F8FAFC 0%,#EEF4FB 100%); }
-  .bm-body .glyph { width:118px; height:118px; border-radius:26px;
-    background:linear-gradient(135deg,#0066CC 0%,#003366 100%); display:flex; align-items:center;
-    justify-content:center; box-shadow:0 14px 28px -8px rgba(0,51,102,.45); }
-  .bm-body .glyph i { color:#fff; font-size:54px; }
-  .bm-body .cap { font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; color:#334155; }
-  .bm-live { display:inline-flex; align-items:center; gap:8px; font-family:'Montserrat',sans-serif;
-    font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#0066CC;
-    background:#DBEAFE; border-radius:999px; padding:5px 14px; }
-
-  .selo-status {
-    display:inline-flex; align-items:center; gap:9px;
-    background:#FEF3C7; border:1px solid #FDE68A; border-radius:999px;
-    padding:8px 16px; font-family:'Montserrat', sans-serif; font-weight:700;
-    font-size:12.5px; color:#92400E;
+  /* Chips de exemplos */
+  .item-chip {
+    display:inline-flex; align-items:center; gap:10px;
+    background:#EFF6FF; border:1px solid #BFDBFE; color:#1E3A8A;
+    font-family:'Montserrat', sans-serif; font-weight:700; font-size:16px;
+    padding:11px 20px; border-radius:999px;
   }
+  .item-chip i { color:#0066CC; font-size:16px; }
+
+  /* Moldura da imagem do app */
+  .fig {
+    border-radius:14px; overflow:hidden; box-shadow:0 16px 30px -10px rgba(0,0,0,.32);
+    border:1px solid #E5E7EB; display:flex; flex-direction:column; background:#fff; margin:0;
+  }
+  .fig .fig-body {
+    flex:1; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg,#F8FAFC 0%,#EEF4FB 100%); padding:34px;
+  }
+  .fig .fig-body img { max-width:66%; max-height:300px; object-fit:contain; display:block; }
+  .fig figcaption {
+    background:#0F172A; color:#E2E8F0; font-size:13px; padding:9px 16px;
+    font-family:'Montserrat', sans-serif; display:flex; align-items:center; gap:9px;
+  }
+  .fig figcaption i { color:#38BDF8; }
 
   .bg-pattern { position:absolute; bottom:-70px; right:-50px; font-size:26rem; opacity:.04; color:#003366; z-index:0; }
 </style>
@@ -72,58 +75,48 @@
     <div>
       <div class="flex items-center gap-3 mb-1">
         <div class="w-1.5 h-9 bg-brand-secondary"></div>
-        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">SAI</h1>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">CEF</h1>
       </div>
-      <p class="text-gray-500 font-medium ml-4 text-lg">Sistema de Acompanhamento de Investimentos</p>
+      <p class="text-gray-500 font-medium ml-4 text-lg">Controle de Equipamentos de Fiscalização</p>
     </div>
     <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
-      <i class="fas fa-money-bill-trend-up text-xl"></i>
+      <i class="fas fa-toolbox text-xl"></i>
       <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SISTEMAS GPF</p>
     </div>
   </div>
 
   <!-- Conteúdo -->
-  <div class="flex-1 flex z-10 min-h-0 px-16 pb-6 gap-12">
+  <div class="flex-1 flex z-10 min-h-0 px-16 pb-5 gap-12">
 
     <!-- ESQUERDA — Cartões -->
-    <div class="flex flex-col min-h-0 justify-between gap-6 py-2" style="flex:1.15;">
-
-      <div class="info-card" style="border-left:5px solid #0066CC;">
-        <p class="card-t"><span class="icon-badge"><i class="fas fa-chart-line"></i></span> O que faz</p>
-        <p class="card-d">Acompanha os <strong>investimentos previstos</strong> nos instrumentos do setor portuário, como contratos de arrendamento e outorgas.</p>
+    <div class="flex flex-col justify-between min-h-0" style="flex:1.1;">
+      <div class="info-card">
+        <p class="card-title"><i class="fas fa-dolly"></i> O que faz</p>
+        <p class="card-desc">Cadastro e controle dos <strong>equipamentos usados pela fiscalização</strong>: alocação por unidade, movimentação e situação de cada item.</p>
       </div>
-
-      <div class="info-card" style="border-left:5px solid #2563EB;">
-        <p class="card-t"><span class="icon-badge"><i class="fas fa-rocket"></i></span> Situação</p>
-        <p class="card-d">Sistema em <strong>implantação e expansão ao longo de 2026</strong>, com integrações a outras bases da Agência ainda em desenvolvimento.</p>
+      <div class="info-card">
+        <p class="card-title"><i class="fas fa-clipboard-list"></i> Por que importa</p>
+        <p class="card-desc"><strong>Rastreabilidade patrimonial</strong> dos itens de campo; base para distribuição e reposição.</p>
       </div>
-
-      <div class="info-card" style="border-left:5px solid #003366;">
-        <p class="card-t"><span class="icon-badge"><i class="fas fa-scale-balanced"></i></span> Para que serve à fiscalização</p>
-        <p class="card-d">Permite <strong>confrontar o investimento contratado com o efetivamente executado</strong>, subsidiando a análise dos planos de investimento.</p>
+      <div class="info-card">
+        <p class="card-title"><i class="fas fa-boxes-packing"></i> Exemplos de itens</p>
+        <div class="flex flex-wrap gap-3 mt-2">
+          <span class="item-chip"><i class="fas fa-laptop"></i> Computadores portáteis</span>
+          <span class="item-chip"><i class="fas fa-shield-halved"></i> Equipamentos de proteção</span>
+          <span class="item-chip"><i class="fas fa-boxes-stacked"></i> Itens táticos</span>
+          <span class="item-chip"><i class="fas fa-screwdriver-wrench"></i> Acessórios de campo</span>
+        </div>
       </div>
-
     </div>
 
-    <!-- DIREITA — Mockup do sistema -->
+    <!-- DIREITA — Imagem real do app -->
     <div class="flex flex-col min-h-0 justify-center items-center" style="flex:1;">
-      <div class="browser-mock" style="width:100%; max-height:74%;">
-        <div class="bm-bar">
-          <div class="bm-dots"><span class="bm-dot" style="background:#F87171;"></span>
-            <span class="bm-dot" style="background:#FBBF24;"></span>
-            <span class="bm-dot" style="background:#34D399;"></span></div>
-          <div class="bm-url"><i class="fas fa-lock" style="font-size:11px;"></i> prd-apex.antaq.gov.br · SAI</div>
+      <figure class="fig" style="width:100%; max-width:560px; max-height:78%;">
+        <div class="fig-body">
+          <img src="Imagens/app-cef.png" alt="Ícone do aplicativo CEF — Controle de Equipamentos de Fiscalização"/>
         </div>
-        <div class="bm-body">
-          <div class="glyph"><i class="fas fa-money-bill-trend-up"></i></div>
-          <p class="cap">SAI</p>
-          <span class="bm-live"><i class="fas fa-circle-play"></i> Demonstração ao vivo</span>
-        </div>
-      </div>
-
-      <div class="mt-6">
-        <span class="selo-status"><i class="fas fa-gear"></i> Em implantação · integrações em desenvolvimento</span>
-      </div>
+        <figcaption><i class="fas fa-toolbox"></i> CEF — Controle de Equipamentos</figcaption>
+      </figure>
     </div>
 
   </div>
@@ -131,11 +124,11 @@
   <!-- Rodapé -->
   <div class="px-16 pb-6 flex justify-between items-center z-10">
     <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
-    <p class="text-gray-300 text-xs font-mono">21 / 34</p>
+    <p class="text-gray-300 text-xs font-mono">21 / 33</p>
   </div>
 
   <!-- Marca d'água decorativa -->
-  <div class="bg-pattern"><i class="fas fa-money-bill-trend-up"></i></div>
+  <div class="bg-pattern"><i class="fas fa-toolbox"></i></div>
 </div>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>

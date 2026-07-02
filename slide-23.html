@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Demandas SFC · SuporteGPF</title>
+<title>AeroSFC</title>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
@@ -19,90 +19,41 @@
   .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
   .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
 
-  /* ── Cartões espelhados ── */
-  .mirror-row { display:grid; grid-template-columns:1fr 1fr; gap:44px; position:relative; }
-  .mirror-row::after {
-    content:''; position:absolute; top:6%; bottom:6%; left:50%; width:1px;
-    background:linear-gradient(180deg, transparent 0%, #E2E8F0 20%, #E2E8F0 80%, transparent 100%);
-    transform:translateX(-50%);
+  .info-card {
+    background:#F8FAFC; border-radius:12px; padding:26px 32px;
+    box-shadow:0 2px 6px rgba(0,0,0,.06);
   }
-  .mirror-card {
-    background:#F8FAFC; border:1px solid #E5E7EB; border-radius:20px;
-    box-shadow:0 14px 30px -12px rgba(0,51,102,.20);
-    padding:30px 38px; position:relative; overflow:hidden;
+  .info-card p.card-t { font-family:'Montserrat', sans-serif; font-weight:700; color:#003366; font-size:25px; margin-bottom:10px; display:flex; align-items:center; gap:16px; }
+  .info-card p.card-d { color:#4B5563; font-size:20px; line-height:1.55; }
+  .icon-badge {
+    width:44px; height:44px; border-radius:11px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:18px; color:#fff;
+    background:linear-gradient(135deg,#0066CC 0%,#003366 100%);
   }
-  .mirror-card.left  { border-top:6px solid #059669; }
-  .mirror-card.right { border-top:6px solid #E11D48; }
 
-  .mc-head { display:flex; align-items:center; gap:22px; }
-  .mirror-card.right .mc-head { flex-direction:row-reverse; text-align:right; }
+  /* Moldura da captura do app (ícone institucional, object-fit:contain) */
+  .fig {
+    border-radius:14px; overflow:hidden; box-shadow:0 16px 30px -10px rgba(0,0,0,.32);
+    border:1px solid #E5E7EB; display:flex; flex-direction:column; background:#fff;
+  }
+  .fig-img-wrap {
+    flex:1; min-height:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:14px; background:linear-gradient(135deg,#F8FAFC 0%,#EEF4FB 100%); padding:30px;
+  }
+  .fig-img-wrap img { width:150px; height:150px; object-fit:contain; display:block; filter:drop-shadow(0 10px 18px rgba(0,51,102,.18)); }
+  .app-pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:#DBEAFE; color:#1E3A8A; font-family:'Montserrat', sans-serif; font-weight:700;
+    font-size:12px; letter-spacing:.08em; text-transform:uppercase; border-radius:999px; padding:6px 14px;
+  }
+  .app-name { font-family:'Montserrat', sans-serif; font-weight:800; font-size:26px; color:#003366; letter-spacing:-.5px; }
+  .fig figcaption {
+    background:#0F172A; color:#E2E8F0; font-size:13px; padding:9px 16px;
+    font-family:'Montserrat', sans-serif; display:flex; align-items:center; gap:9px;
+  }
+  .fig figcaption i { color:#38BDF8; }
 
-  /* Ícone-logo circular (verde: check · vermelho: boia) */
-  .mc-icon {
-    width:96px; height:96px; flex-shrink:0; border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .mirror-card.left  .mc-icon { background:linear-gradient(135deg,#10B981 0%,#047857 100%); box-shadow:0 10px 20px -6px rgba(4,120,87,.45); }
-  .mirror-card.right .mc-icon { background:linear-gradient(135deg,#FB7185 0%,#BE123C 100%); box-shadow:0 10px 20px -6px rgba(190,18,60,.45); }
-  .mc-icon i { color:#fff; }
-  .mirror-card.left  .mc-icon i { font-size:48px; }
-  .mirror-card.right .mc-icon i { font-size:50px; }
-
-  .mc-title { font-family:'Montserrat',sans-serif; font-weight:800; font-size:27px; color:#003366; line-height:1.12; }
-  .mc-chip {
-    display:inline-flex; align-items:center; gap:8px; margin-top:9px;
-    font-family:'Montserrat',sans-serif; font-weight:700; font-size:12.5px;
-    letter-spacing:.05em; text-transform:uppercase; padding:5px 14px; border-radius:999px;
-  }
-  .mirror-card.left  .mc-chip { background:#D1FAE5; color:#065F46; }
-  .mirror-card.right .mc-chip { background:#FFE4E6; color:#9F1239; }
-  .mirror-card.right .mc-chip { flex-direction:row-reverse; }
-
-  .mc-desc { font-size:18.5px; line-height:1.5; color:#4B5563; margin-top:18px; }
-  .mirror-card.right .mc-desc { text-align:right; }
-  .mc-desc strong { color:#1F2937; font-weight:700; }
-
-  /* Fluxo (3 passos numerados) */
-  .mc-flow-label {
-    font-family:'Montserrat',sans-serif; font-weight:800; font-size:11.5px; letter-spacing:.12em;
-    text-transform:uppercase; color:#94A3B8; margin-top:18px; margin-bottom:11px;
-  }
-  .mirror-card.right .mc-flow-label { text-align:right; }
-  .mc-features { display:flex; flex-direction:column; gap:10px; }
-  .mirror-card.right .mc-features { align-items:flex-end; }
-  .mc-feat { display:flex; align-items:center; gap:14px; }
-  .mirror-card.right .mc-feat { flex-direction:row-reverse; }
-  .mc-feat .fico {
-    width:34px; height:34px; flex-shrink:0; border-radius:50%; display:flex;
-    align-items:center; justify-content:center; font-size:15px; color:#fff;
-    font-family:'Montserrat',sans-serif; font-weight:800;
-  }
-  .mirror-card.left  .mc-feat .fico { background:#059669; }
-  .mirror-card.right .mc-feat .fico { background:#E11D48; }
-  .mc-feat span.flabel { font-size:17px; color:#374151; font-weight:600; }
-  .mc-feat span.flabel strong { color:#1F2937; font-weight:800; }
-
-  /* ── Faixa: regra de bolso ── */
-  .rule-bar {
-    display:flex; align-items:center; gap:22px;
-    background:linear-gradient(90deg,#003366 0%,#0057AD 100%);
-    border-radius:16px; padding:18px 34px; position:relative; overflow:hidden;
-    box-shadow:0 12px 26px -10px rgba(0,51,102,.45);
-  }
-  .rule-bar::before { content:''; position:absolute; left:0; top:0; height:100%; width:6px; background:#FFD700; }
-  .rule-icon {
-    width:52px; height:52px; flex-shrink:0; border-radius:14px;
-    background:rgba(255,215,0,0.14); border:1px solid rgba(255,215,0,0.4);
-    display:flex; align-items:center; justify-content:center;
-  }
-  .rule-icon i { color:#FFD700; font-size:22px; }
-  .rule-text { font-family:'Montserrat',sans-serif; font-size:20px; color:#EAF2FF; line-height:1.42; }
-  .rule-text .rule-label {
-    font-weight:800; text-transform:uppercase; letter-spacing:.05em; font-size:14px;
-    color:#FFD700; display:block; margin-bottom:4px;
-  }
-  .rule-text .hl-suporte  { color:#FDA4AF; font-weight:800; }
-  .rule-text .hl-demandas { color:#6EE7B7; font-weight:800; }
+  .bg-pattern { position:absolute; bottom:-70px; right:-50px; font-size:26rem; opacity:.04; color:#003366; z-index:0; }
 </style>
 </head>
 <body>
@@ -116,64 +67,49 @@
     <div>
       <div class="flex items-center gap-3 mb-1">
         <div class="w-1.5 h-9 bg-brand-secondary"></div>
-        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">Demandas SFC · SuporteGPF</h1>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">AeroSFC</h1>
       </div>
-      <p class="text-gray-500 font-medium ml-4 text-lg">Duas coisas diferentes — e cada uma tem seu canal e seu gestor.</p>
+      <p class="text-gray-500 font-medium ml-4 text-lg">Controle das aeronaves remotamente pilotadas da fiscalização</p>
     </div>
     <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
-      <i class="fas fa-headset text-xl"></i>
+      <i class="fas fa-helicopter text-xl"></i>
       <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SISTEMAS GPF</p>
     </div>
   </div>
 
   <!-- Conteúdo -->
-  <div class="flex-1 flex flex-col justify-center gap-7 px-16 pb-6 z-10 min-h-0">
+  <div class="flex-1 flex z-10 min-h-0 px-16 pb-6 gap-12">
 
-    <div class="mirror-row">
-      <!-- Cartão: Demandas SFC -->
-      <div class="mirror-card left">
-        <div class="mc-head">
-          <div class="mc-icon"><i class="fas fa-check"></i></div>
-          <div>
-            <p class="mc-title">Demandas SFC</p>
-            <span class="mc-chip"><i class="fas fa-sitemap"></i> Gestão · GCOR</span>
-          </div>
-        </div>
-        <p class="mc-desc">A <strong>GCOR</strong> — Gerência de Coordenação das Unidades Regionais — coordena e <strong>distribui as demandas de trabalho</strong> para as unidades regionais.</p>
-        <p class="mc-flow-label">Como a demanda chega até você</p>
-        <div class="mc-features">
-          <div class="mc-feat"><span class="fico">1</span><span class="flabel">A <strong>GCOR</strong> distribui a demanda</span></div>
-          <div class="mc-feat"><span class="fico">2</span><span class="flabel">O <strong>chefe da regional</strong> recebe</span></div>
-          <div class="mc-feat"><span class="fico">3</span><span class="flabel">Direciona ao <strong>servidor responsável</strong></span></div>
-        </div>
+    <!-- ESQUERDA — Cartões -->
+    <div class="flex flex-col min-h-0 justify-between gap-6" style="flex:1.15;">
+
+      <div class="info-card" style="border-left:5px solid #0066CC;">
+        <p class="card-t"><span class="icon-badge"><i class="fas fa-helicopter"></i></span> O que faz</p>
+        <p class="card-d">Controla as <strong>aeronaves remotamente pilotadas (RPA/drones)</strong> da fiscalização: frota, pilotos habilitados e registros das operações realizadas.</p>
       </div>
 
-      <!-- Cartão: SuporteGPF -->
-      <div class="mirror-card right">
-        <div class="mc-head">
-          <div>
-            <p class="mc-title">SuporteGPF</p>
-            <span class="mc-chip"><i class="fas fa-headset"></i> Gestão · GPF</span>
-          </div>
-          <div class="mc-icon"><i class="fas fa-life-ring"></i></div>
-        </div>
-        <p class="mc-desc"><strong>Canal de chamados</strong> dos sistemas da GPF: reporte de <strong>defeitos</strong>, dúvidas de uso e sugestões de melhoria.</p>
-        <p class="mc-flow-label">Como funciona um chamado</p>
-        <div class="mc-features">
-          <div class="mc-feat"><span class="flabel">Você <strong>abre o chamado</strong></span><span class="fico">1</span></div>
-          <div class="mc-feat"><span class="flabel">A <strong>GPF</strong> faz a triagem e atende</span><span class="fico">2</span></div>
-          <div class="mc-feat"><span class="flabel">Acompanhe <strong>até a resolução</strong></span><span class="fico">3</span></div>
-        </div>
+      <div class="info-card" style="border-left:5px solid #2563EB;">
+        <p class="card-t"><span class="icon-badge"><i class="fas fa-graduation-cap"></i></span> Contexto</p>
+        <p class="card-d">O uso de drones <strong>amplia o alcance das inspeções</strong>, cobrindo grandes áreas e locais de difícil acesso; a Agência mantém programa de <strong>capacitação de pilotos</strong>.</p>
       </div>
+
+      <div class="info-card" style="border-left:5px solid #003366;">
+        <p class="card-t"><span class="icon-badge"><i class="fas fa-id-badge"></i></span> Quem usa</p>
+        <p class="card-d"><strong>Pilotos habilitados</strong> e <strong>gestores da operação</strong> das aeronaves remotamente pilotadas.</p>
+      </div>
+
     </div>
 
-    <!-- Faixa: regra de bolso -->
-    <div class="rule-bar">
-      <div class="rule-icon"><i class="fas fa-route"></i></div>
-      <p class="rule-text">
-        <span class="rule-label">Regra de bolso</span>
-        Demanda de <strong>trabalho</strong> das regionais (coordenada pela GCOR) → <span class="hl-demandas">Demandas SFC</span> &nbsp;·&nbsp; <strong>Problema</strong> num sistema — defeito ou dúvida → <span class="hl-suporte">SuporteGPF</span>
-      </p>
+    <!-- DIREITA — Ícone institucional do app AeroSFC -->
+    <div class="flex flex-col min-h-0 justify-center items-center" style="flex:1;">
+      <figure class="fig" style="margin:0; width:100%; max-height:78%;">
+        <div class="fig-img-wrap">
+          <span class="app-pill"><i class="fas fa-mobile-screen-button"></i> Aplicativo institucional</span>
+          <img src="Imagens/app-aerosfc.png" alt="Ícone do aplicativo AeroSFC — controle das aeronaves remotamente pilotadas da fiscalização"/>
+          <p class="app-name">AeroSFC</p>
+        </div>
+        <figcaption><i class="fas fa-helicopter"></i> AeroSFC — Aeronaves da Fiscalização</figcaption>
+      </figure>
     </div>
 
   </div>
@@ -181,8 +117,11 @@
   <!-- Rodapé -->
   <div class="px-16 pb-6 flex justify-between items-center z-10">
     <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
-    <p class="text-gray-300 text-xs font-mono">23 / 34</p>
+    <p class="text-gray-300 text-xs font-mono">23 / 33</p>
   </div>
+
+  <!-- Marca d'água decorativa -->
+  <div class="bg-pattern"><i class="fas fa-helicopter"></i></div>
 </div>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>

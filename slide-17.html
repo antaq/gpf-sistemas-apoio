@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Os 6 erros que você não vai cometer</title>
+<title>Bloco 2 — Sistemas Internos da GPF</title>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
@@ -14,164 +14,125 @@
 <style>
   html { font-size: 26px; }
   body { margin:0; padding:0; background-color:#f3f4f6; overflow:hidden; font-family:'Open Sans', sans-serif; }
-  .slide-container { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; background-color:#ffffff; overflow:hidden; }
+  .slide-container {
+    width:100vw; height:100vh; position:relative; display:flex; flex-direction:column;
+    background: linear-gradient(135deg, #002244 0%, #003366 50%, #004488 100%);
+    overflow:hidden; color:white;
+  }
   .font-montserrat { font-family:'Montserrat', sans-serif; }
   .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
   .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
 
-  /* Grade de erros */
-  .err-grid {
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap:38px 32px;
-  }
-  .err-card {
-    position:relative;
-    background:#FEF2F2;
-    border:1px solid #FECACA;
-    border-left:6px solid #DC2626;
-    border-radius:16px;
-    padding:38px 32px 34px 30px;
-    box-shadow:0 10px 20px -10px rgba(220,38,38,.28);
-    display:flex;
-    align-items:flex-start;
-    gap:22px;
-  }
-  .err-num {
-    position:absolute; top:12px; right:20px;
-    font-family:'Montserrat', sans-serif; font-weight:900; font-size:50px;
-    color:#FCA5A5; opacity:.55; line-height:1; user-select:none; pointer-events:none;
-  }
-  .err-icon {
-    width:74px; height:74px; border-radius:17px; flex-shrink:0;
-    background:linear-gradient(135deg,#EF4444 0%,#B91C1C 100%);
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 8px 16px -6px rgba(185,28,28,.55);
-  }
-  .err-icon i { color:#fff; font-size:31px; }
-  .err-title {
-    font-family:'Montserrat', sans-serif; font-weight:800; font-size:23px;
-    color:#003366; margin-bottom:10px; line-height:1.22;
-  }
-  .err-desc { font-size:17.5px; color:#4B5563; line-height:1.5; }
+  .accent-left-gold { position:absolute; left:0; top:0; width:12px; height:100%; background-color:#FFD700; z-index:20; }
+  .accent-left-blue { position:absolute; left:12px; top:0; width:4px; height:100%; background-color:#0066CC; z-index:20; }
 
-  /* Faixa verde de boas práticas */
-  .gp-banner {
-    display:flex; align-items:center; gap:22px;
-    background:linear-gradient(135deg,#047857 0%,#059669 100%);
-    border-radius:14px; padding:28px 36px;
-    box-shadow:0 10px 22px -8px rgba(4,120,87,.45);
-  }
-  .gp-banner .gp-icon { font-size:33px; color:#fff; flex-shrink:0; }
-  .gp-banner .gp-label {
-    display:block; font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px;
-    letter-spacing:.12em; text-transform:uppercase; color:#D1FAE5; margin-bottom:5px;
-  }
-  .gp-banner .gp-text { font-family:'Montserrat',sans-serif; font-weight:600; font-size:20.5px; color:#fff; }
+  .shape-circle { position:absolute; border-radius:50%; z-index:0; }
+  .shape-1 { width:620px; height:620px; top:-180px; right:-160px; border:60px solid rgba(255,255,255,0.03); }
+  .shape-2 { width:420px; height:420px; bottom:-140px; right:18%; border:40px solid rgba(255,255,255,0.03); }
+  .bg-pattern { background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size:22px 22px; }
 
-  .bg-pattern { position:absolute; bottom:-70px; right:-50px; font-size:24rem; opacity:.035; color:#DC2626; z-index:0; }
+  .module-num {
+    font-family:'Montserrat', sans-serif; font-weight:900; line-height:0.9;
+    font-size:150px; letter-spacing:-4px; color:#FFD700;
+    text-shadow:0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  .chip {
+    display:flex; align-items:center; gap:16px;
+    background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.14);
+    border-radius:16px; padding:16px 22px;
+  }
+  .chip-icon {
+    width:52px; height:52px; border-radius:12px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:22px;
+    background:rgba(0,102,204,0.30); color:#7CC0FF;
+  }
 </style>
 </head>
 <body>
 <div class="slide-container">
-  <!-- Barras de topo -->
-  <div style="height:12px;background:#003366;width:100%;"></div>
-  <div style="height:6px;background:#0066CC;width:100%;"></div>
+  <div class="accent-left-gold"></div>
+  <div class="accent-left-blue"></div>
 
-  <!-- Header -->
-  <div class="flex items-center justify-between px-16 pt-7 pb-2 z-10">
-    <div>
-      <div class="flex items-center gap-3 mb-1">
-        <div class="w-1.5 h-9 bg-brand-secondary"></div>
-        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">Os 6 erros que você não vai cometer</h1>
-      </div>
-      <p class="text-gray-500 font-medium ml-4 text-lg">Aprendendo com o retrabalho dos outros</p>
-    </div>
-    <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
-      <i class="fas fa-triangle-exclamation text-xl"></i>
-      <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SFIS · PRÁTICA</p>
+  <div class="shape-circle shape-1"></div>
+  <div class="shape-circle shape-2"></div>
+  <div class="absolute inset-0 bg-pattern"></div>
+
+  <img src="Imagens/logo-antaq-branca.png" alt="" class="absolute"
+       style="top:50%; left:62%; width:52vw; max-width:780px; transform:translate(-50%,-50%);
+              opacity:0.06; z-index:0; pointer-events:none;" />
+
+  <div class="absolute text-white z-0"
+       style="bottom:-60px; right:-40px; font-size:520px; line-height:0; opacity:0.05; transform:translate(8%,8%);">
+    <i class="fas fa-cubes"></i>
+  </div>
+
+  <!-- Logo ANTAQ topo -->
+  <div class="absolute z-10 flex items-center gap-4" style="top:56px; left:96px;">
+    <img src="Imagens/logo-antaq-branca.png" alt="Logo ANTAQ" style="height:46px; width:auto;" />
+    <div style="border-left:1px solid rgba(255,255,255,0.20); padding-left:16px;">
+      <p class="text-blue-200 font-montserrat font-bold tracking-widest uppercase" style="font-size:13px;">Curso de Introdução à Fiscalização</p>
+      <p class="text-blue-300 font-montserrat font-semibold tracking-wider uppercase" style="font-size:11px; opacity:0.85;">SFC / GPF — ANTAQ</p>
     </div>
   </div>
 
-  <!-- Conteúdo -->
-  <div class="flex-1 flex flex-col justify-center px-16 pb-6 z-10 min-h-0" style="gap:52px;">
+  <!-- Conteúdo central -->
+  <div class="relative z-10 flex-1 flex flex-col justify-center" style="padding-left:96px; padding-right:80px; padding-top:96px; padding-bottom:24px;">
 
-    <div class="err-grid">
-      <div class="err-card">
-        <span class="err-num">01</span>
-        <div class="err-icon"><i class="fas fa-copy"></i></div>
-        <div>
-          <p class="err-title">Processo duplicado</p>
-          <p class="err-desc">Pesquise antes de criar: outro processo pode já cobrir a mesma ação.</p>
-        </div>
-      </div>
+    <div class="flex items-center gap-4 mb-4">
+      <div style="width:72px; height:4px; background-color:#FFD700;"></div>
+      <p class="font-montserrat font-semibold tracking-[0.3em] uppercase text-blue-200" style="font-size:22px;">Bloco</p>
+    </div>
 
-      <div class="err-card">
-        <span class="err-num">02</span>
-        <div class="err-icon"><i class="fas fa-user-xmark"></i></div>
-        <div>
-          <p class="err-title">Fiscalizado errado</p>
-          <p class="err-desc">Valide o CNPJ no Corporativo antes de vincular a empresa ao processo.</p>
-        </div>
-      </div>
-
-      <div class="err-card">
-        <span class="err-num">03</span>
-        <div class="err-icon"><i class="fas fa-section"></i></div>
-        <div>
-          <p class="err-title">Enquadramento genérico</p>
-          <p class="err-desc">Norma sem artigo e inciso não para em pé na autuação.</p>
-        </div>
-      </div>
-
-      <div class="err-card">
-        <span class="err-num">04</span>
-        <div class="err-icon"><i class="fas fa-paperclip"></i></div>
-        <div>
-          <p class="err-title">Evidência não anexada</p>
-          <p class="err-desc">O que não está no processo não existe para efeito de prova.</p>
-        </div>
-      </div>
-
-      <div class="err-card">
-        <span class="err-num">05</span>
-        <div class="err-icon"><i class="fas fa-calendar-xmark"></i></div>
-        <div>
-          <p class="err-title">Datas inconsistentes</p>
-          <p class="err-desc">Ação antes da OS, notificação antes da ação — a linha do tempo tem que fechar.</p>
-        </div>
-      </div>
-
-      <div class="err-card">
-        <span class="err-num">06</span>
-        <div class="err-icon"><i class="fas fa-hourglass-half"></i></div>
-        <div>
-          <p class="err-title">Esquecer de submeter</p>
-          <p class="err-desc">Processo pronto parado na mesa não produz nenhum efeito.</p>
-        </div>
+    <div class="flex items-end gap-10 mb-8">
+      <span class="module-num">02</span>
+      <div class="pb-2" style="border-left:5px solid rgba(255,215,0,0.55); padding-left:36px;">
+        <h1 class="font-montserrat font-black text-white leading-tight" style="font-size:70px; letter-spacing:-1.5px;">
+          Sistemas Internos da GPF
+        </h1>
+        <p class="font-montserrat font-semibold text-blue-200 uppercase" style="font-size:19px; letter-spacing:.08em; margin-top:12px;">
+          SisPAT <span style="color:#FFD700;">·</span> SAI <span style="color:#FFD700;">·</span> CEF <span style="color:#FFD700;">·</span> Demandas SFC <span style="color:#FFD700;">·</span> SuporteGPF <span style="color:#FFD700;">·</span> AeroSFC
+        </p>
+        <p class="font-montserrat text-blue-100 font-light mt-3" style="font-size:25px; max-width:1180px; line-height:1.4;">
+          As ferramentas que a própria Gerência constrói para resolver problemas do <strong class="font-semibold" style="color:#FFD700;">dia a dia da fiscalização</strong>.
+        </p>
       </div>
     </div>
 
-    <!-- Faixa de boas práticas -->
-    <div class="gp-banner">
-      <i class="fas fa-circle-check gp-icon"></i>
-      <p>
-        <span class="gp-label">Boas práticas</span>
-        <span class="gp-text">Conferência em dupla antes de submeter · Em dúvida, WikiSFC · Problema de sistema, SuporteGPF.</span>
-      </p>
+    <!-- Chips dos sistemas do bloco (3x2) -->
+    <div class="grid grid-cols-3 gap-5" style="max-width:1460px;">
+      <div class="chip">
+        <div class="chip-icon"><i class="fas fa-warehouse"></i></div>
+        <p class="font-montserrat font-semibold text-white" style="font-size:19px; line-height:1.25;">SisPAT</p>
+      </div>
+      <div class="chip">
+        <div class="chip-icon"><i class="fas fa-money-bill-trend-up"></i></div>
+        <p class="font-montserrat font-semibold text-white" style="font-size:19px; line-height:1.25;">SAI</p>
+      </div>
+      <div class="chip">
+        <div class="chip-icon"><i class="fas fa-toolbox"></i></div>
+        <p class="font-montserrat font-semibold text-white" style="font-size:19px; line-height:1.25;">CEF</p>
+      </div>
+      <div class="chip">
+        <div class="chip-icon"><i class="fas fa-inbox"></i></div>
+        <p class="font-montserrat font-semibold text-white" style="font-size:19px; line-height:1.25;">Demandas SFC</p>
+      </div>
+      <div class="chip">
+        <div class="chip-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+        <p class="font-montserrat font-semibold text-white" style="font-size:19px; line-height:1.25;">SuporteGPF</p>
+      </div>
+      <div class="chip">
+        <div class="chip-icon"><i class="fas fa-helicopter"></i></div>
+        <p class="font-montserrat font-semibold text-white" style="font-size:19px; line-height:1.25;">AeroSFC</p>
+      </div>
     </div>
-
   </div>
 
   <!-- Rodapé -->
-  <div class="px-16 pb-6 flex justify-between items-center z-10">
-    <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
-    <p class="text-gray-300 text-xs font-mono">17 / 34</p>
+  <div class="relative z-10 flex justify-between items-center" style="padding:0 96px 32px;">
+    <p class="text-blue-200 font-montserrat" style="font-size:13px; opacity:0.7;">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
+    <p class="text-blue-200 font-mono" style="font-size:13px; opacity:0.7;">17 / 33</p>
   </div>
-
-  <!-- Marca d'água decorativa -->
-  <div class="bg-pattern"><i class="fas fa-triangle-exclamation"></i></div>
 </div>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>

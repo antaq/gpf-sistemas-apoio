@@ -144,24 +144,24 @@
     <button onclick="prev()" id="btnPrev" title="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
     <div class="nav-dots" id="navDots"></div>
     <button onclick="next()" id="btnNext" title="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
-    <span class="page-info" id="pageInfo">1 / 34</span>
+    <span class="page-info" id="pageInfo">1 / 33</span>
   </div>
 
   <button class="fs-btn" onclick="toggleFullscreen()" title="Tela Cheia (F)"><i class="fa-solid fa-expand" id="fsIcon"></i></button>
 
   <script>
-    const total = 34;
+    const total = 33;
     const frame = document.getElementById('slideFrame');
     let current = 1;
 
-    // Blocos: 1-4 Abertura · 5-17 Legados + Prática SFIS · 18-24 Sistemas GPF
-    // 25-27 Externos · 28-31 Ferramentas · 32-34 Fechamento
+    // Blocos: 1-4 Abertura · 5-16 Legados + Prática SFIS · 17-23 Sistemas GPF
+    // 24-26 Externos · 27-30 Ferramentas · 31-33 Fechamento
     function moduleLabel(n) {
       if (n <= 4) return 'Abertura';
-      if (n <= 17) return 'Bloco 1 · Legados & Prática SFIS';
-      if (n <= 24) return 'Bloco 2 · Sistemas GPF';
-      if (n <= 27) return 'Bloco 3 · Externos';
-      if (n <= 31) return 'Bloco 4 · Ferramentas';
+      if (n <= 16) return 'Bloco 1 · Legados & Prática SFIS';
+      if (n <= 23) return 'Bloco 2 · Sistemas GPF';
+      if (n <= 26) return 'Bloco 3 · Externos';
+      if (n <= 30) return 'Bloco 4 · Ferramentas';
       return 'Fechamento';
     }
 
@@ -192,7 +192,7 @@
 
     // Build dots with subtle block separators
     const dotsContainer = document.getElementById('navDots');
-    const seps = new Set([4, 17, 24, 27, 31]);
+    const seps = new Set([4, 16, 23, 26, 30]);
     for (let i = 0; i < total; i++) {
       const dot = document.createElement('button');
       dot.addEventListener('click', () => { current = i + 1; render(); });

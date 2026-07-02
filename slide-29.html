@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WikiSFC</title>
+<title>SFIS Mobile — A fiscalização na palma da mão</title>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
@@ -19,46 +19,75 @@
   .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
   .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
 
-  /* Cartões */
+  /* Requisito / download cards */
   .info-card {
-    background:#F8FAFC; border-left:6px solid #0066CC; border-radius:12px;
-    padding:26px 32px; box-shadow:0 2px 6px rgba(0,0,0,.06);
+    background:#F0F9FF; border:2px solid #BAE6FD; border-radius:14px;
+    box-shadow:0 6px 14px -6px rgba(0,102,204,.15);
+    padding:11px 18px; display:flex; align-items:center; gap:14px;
   }
-  .info-card:nth-of-type(2) { border-left-color:#0E7490; }
-  .info-card:nth-of-type(3) { border-left-color:#003366; }
-  .info-card .card-title {
-    font-family:'Montserrat', sans-serif; font-weight:700; color:#003366;
-    font-size:25px; margin-bottom:12px; display:flex; align-items:center; gap:16px;
+  .info-card .icon-box {
+    flex-shrink:0; width:44px; height:44px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:20px;
+    background:linear-gradient(135deg,#0066CC 0%,#003366 100%);
   }
-  .info-card .card-title i {
-    color:#0066CC; font-size:18px; width:44px; height:44px; border-radius:11px;
-    background:#E8F0FB; display:flex; align-items:center; justify-content:center; flex-shrink:0;
-  }
-  .info-card:nth-of-type(2) .card-title i { color:#0E7490; background:#E0F2F5; }
-  .info-card:nth-of-type(3) .card-title i { color:#003366; background:#E4EAF2; }
-  .info-card p.card-desc { color:#4B5563; font-size:20px; line-height:1.55; }
 
-  /* Mockup de tela (KIT §4) */
-  .browser-mock { border-radius:14px; overflow:hidden; border:1px solid #E5E7EB;
-    box-shadow:0 16px 30px -10px rgba(0,0,0,.28); background:#fff; display:flex; flex-direction:column; }
-  .bm-bar { display:flex; align-items:center; gap:14px; padding:12px 18px; background:#E8EEF5; border-bottom:1px solid #D5DFEA; }
-  .bm-dots { display:flex; gap:7px; }
-  .bm-dot { width:13px; height:13px; border-radius:50%; }
-  .bm-url { flex:1; background:#fff; border:1px solid #D5DFEA; border-radius:999px;
-    padding:6px 16px; font-family:'Montserrat',sans-serif; font-size:13px; color:#64748B;
-    display:flex; align-items:center; gap:8px; }
-  .bm-body { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:16px; padding:44px 24px; background:linear-gradient(135deg,#F8FAFC 0%,#EEF4FB 100%); }
-  .bm-body .glyph { width:120px; height:120px; border-radius:26px;
-    background:linear-gradient(135deg,#0066CC 0%,#003366 100%); display:flex; align-items:center;
-    justify-content:center; box-shadow:0 14px 28px -8px rgba(0,51,102,.45); }
-  .bm-body .glyph i { color:#fff; font-size:58px; }
-  .bm-body .cap { font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; color:#334155; }
-  .bm-live { display:inline-flex; align-items:center; gap:8px; font-family:'Montserrat',sans-serif;
-    font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#0066CC;
-    background:#DBEAFE; border-radius:999px; padding:5px 14px; }
+  /* Block titles */
+  .block-title {
+    font-family:'Montserrat', sans-serif; font-weight:800; font-size:18px;
+    color:#003366; text-transform:uppercase; letter-spacing:.04em;
+    display:flex; align-items:center; gap:10px; margin-bottom:12px;
+  }
 
-  .bg-pattern { position:absolute; bottom:-70px; right:-50px; font-size:26rem; opacity:.04; color:#003366; z-index:0; }
+  /* Suprimidos — chips riscados */
+  .supr-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  .supr-chip {
+    display:flex; align-items:center; gap:12px;
+    background:#FEF2F2; border:1px solid #FECACA; border-radius:12px;
+    padding:14px 18px;
+  }
+  .supr-chip i { color:#DC2626; font-size:22px; flex-shrink:0; }
+  .supr-chip span {
+    color:#991B1B; font-weight:600; font-size:19px;
+    text-decoration:line-through; text-decoration-color:#DC2626;
+    text-decoration-thickness:2px;
+  }
+
+  /* Integrados — chips */
+  .int-grid { display:flex; flex-wrap:wrap; gap:9px; }
+  .int-chip {
+    display:inline-flex; align-items:center; gap:8px;
+    background:#EFF6FF; border:1px solid #BFDBFE; border-radius:999px;
+    padding:8px 16px; color:#1E3A8A; font-weight:700; font-size:15px;
+    font-family:'Montserrat', sans-serif;
+  }
+  .int-chip i { color:#0066CC; font-size:13px; }
+
+  /* Video panel moldado como aparelho móvel */
+  .video-panel {
+    background-color:#0F172A; border-radius:18px; border:1px solid #1E293B;
+    box-shadow:0 18px 36px -10px rgba(0,0,0,.4);
+    display:flex; flex-direction:column; overflow:hidden;
+    width:100%; height:100%; position:relative;
+  }
+  .video-header {
+    display:flex; align-items:center; gap:10px;
+    padding:12px 18px; background-color:#1E293B; border-bottom:1px solid #334155;
+  }
+  .video-header i { color:#38BDF8; font-size:16px; }
+  .video-header span {
+    color:#E2E8F0; font-family:'Montserrat', sans-serif; font-weight:600; font-size:14px;
+  }
+  .video-frame {
+    flex:1; background-color:#000; display:flex; align-items:center; justify-content:center;
+    min-height:0; overflow:hidden;
+  }
+  .video-frame video {
+    height:100%; width:auto; max-width:100%; display:block;
+    border-radius:22px; border:5px solid #1E293B;
+  }
+
+  .bg-pattern { position:absolute; bottom:-70px; right:-40px; font-size:24rem; opacity:.04; color:#003366; z-index:0; }
 </style>
 </head>
 <body>
@@ -72,48 +101,78 @@
     <div>
       <div class="flex items-center gap-3 mb-1">
         <div class="w-1.5 h-9 bg-brand-secondary"></div>
-        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">WikiSFC</h1>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">SFIS Mobile</h1>
       </div>
-      <p class="text-gray-500 font-medium ml-4 text-lg">A base de conhecimento da fiscalização</p>
+      <p class="text-gray-500 font-medium ml-4 text-lg">A fiscalização na palma da mão</p>
     </div>
     <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
-      <i class="fas fa-book-open text-xl"></i>
+      <i class="fas fa-mobile-screen-button text-xl"></i>
       <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">FERRAMENTAS</p>
     </div>
   </div>
 
   <!-- Conteúdo -->
-  <div class="flex-1 flex z-10 min-h-0 px-16 pb-5 gap-12">
+  <div class="flex-1 flex z-10 min-h-0 px-16 pb-6 gap-10">
 
-    <!-- ESQUERDA — Cartões -->
-    <div class="flex flex-col justify-between gap-6 min-h-0" style="flex:1.1;">
+    <!-- ESQUERDA — Texto -->
+    <div class="flex flex-col min-h-0 justify-center gap-5" style="flex:1.25;">
+
+      <!-- Requisito -->
       <div class="info-card">
-        <p class="card-title"><i class="fas fa-book"></i> O que reúne</p>
-        <p class="card-desc">Manuais, <strong>procedimentos operacionais</strong>, tutoriais dos sistemas e orientações da SFC.</p>
+        <div class="icon-box"><i class="fab fa-android"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand-primary leading-tight" style="font-size:16px;">Requisito do dispositivo</p>
+          <p class="text-gray-600 leading-snug" style="font-size:14px;">Dispositivo móvel com sistema operacional <strong>Android</strong>.</p>
+        </div>
       </div>
+
+      <!-- Download -->
       <div class="info-card">
-        <p class="card-title"><i class="fas fa-circle-question"></i> Quando usar</p>
-        <p class="card-desc"><strong>SEMPRE antes de perguntar</strong>: a maioria das dúvidas de tela e de procedimento já está documentada.</p>
+        <div class="icon-box"><i class="fas fa-download"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand-primary leading-tight" style="font-size:16px;">Download em endereço interno</p>
+          <p class="text-brand-secondary leading-snug font-semibold break-all" style="font-size:14px;">web3.antaq.gov.br/sistemas/sfismobile/</p>
+        </div>
       </div>
-      <div class="info-card">
-        <p class="card-title"><i class="fas fa-pen-to-square"></i> Cultura viva</p>
-        <p class="card-desc">Encontrou lacuna ou informação desatualizada? <strong>Reporte e contribua</strong> — a WikiSFC melhora com o uso de todos.</p>
+
+      <!-- Itens suprimidos -->
+      <div>
+        <p class="block-title"><i class="fas fa-ban text-red-600"></i> Itens suprimidos <span class="text-gray-400 font-semibold normal-case tracking-normal text-base">— o app substitui</span></p>
+        <div class="supr-grid">
+          <div class="supr-chip"><i class="fas fa-camera"></i><span>Máquina Fotográfica</span></div>
+          <div class="supr-chip"><i class="fas fa-clipboard"></i><span>Prancheta</span></div>
+          <div class="supr-chip"><i class="fas fa-pen"></i><span>Caneta</span></div>
+          <div class="supr-chip"><i class="fas fa-print"></i><span>Impressões</span></div>
+        </div>
       </div>
+
+      <!-- Sistemas integrados -->
+      <div>
+        <p class="block-title"><i class="fas fa-diagram-project text-brand-secondary"></i> Sistemas integrados</p>
+        <div class="int-grid">
+          <span class="int-chip"><i class="fas fa-circle"></i>SFIS</span>
+          <span class="int-chip"><i class="fas fa-circle"></i>Corporativo</span>
+          <span class="int-chip"><i class="fas fa-circle"></i>Outorga</span>
+          <span class="int-chip"><i class="fas fa-circle"></i>Arrendamentov2</span>
+          <span class="int-chip"><i class="fas fa-circle"></i>SIGTAq</span>
+          <span class="int-chip"><i class="fas fa-circle"></i>SEI</span>
+          <span class="int-chip"><i class="fas fa-circle"></i>SARH</span>
+        </div>
+      </div>
+
     </div>
 
-    <!-- DIREITA — Mockup de tela -->
-    <div class="flex flex-col min-h-0 justify-center items-center" style="flex:1;">
-      <div class="browser-mock" style="width:100%; max-width:560px; max-height:78%;">
-        <div class="bm-bar">
-          <div class="bm-dots"><span class="bm-dot" style="background:#F87171;"></span>
-            <span class="bm-dot" style="background:#FBBF24;"></span>
-            <span class="bm-dot" style="background:#34D399;"></span></div>
-          <div class="bm-url"><i class="fas fa-lock" style="font-size:11px;"></i> WikiSFC · intranet SFC</div>
+    <!-- DIREITA — Vídeo -->
+    <div class="flex flex-col min-h-0" style="flex:1;">
+      <div class="video-panel">
+        <div class="video-header">
+          <i class="fas fa-circle-play"></i>
+          <span>Demonstração — SFIS Mobile</span>
         </div>
-        <div class="bm-body">
-          <div class="glyph"><i class="fas fa-book-open"></i></div>
-          <p class="cap">WikiSFC</p>
-          <span class="bm-live"><i class="fas fa-circle-play"></i> Demonstração ao vivo</span>
+        <div class="video-frame">
+          <video autoplay loop muted playsinline preload="auto">
+            <source src="Imagens/sfis-mobile.webm" type="video/webm"/>
+          </video>
         </div>
       </div>
     </div>
@@ -123,11 +182,11 @@
   <!-- Rodapé -->
   <div class="px-16 pb-6 flex justify-between items-center z-10">
     <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
-    <p class="text-gray-300 text-xs font-mono">29 / 34</p>
+    <p class="text-gray-300 text-xs font-mono">29 / 33</p>
   </div>
 
   <!-- Marca d'água decorativa -->
-  <div class="bg-pattern"><i class="fas fa-book-open"></i></div>
+  <div class="bg-pattern"><i class="fas fa-mobile-screen-button"></i></div>
 </div>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>

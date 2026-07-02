@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>O caminho de um processo no SFIS</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
+<link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  html { font-size: 26px; }
+  body { margin:0; padding:0; background-color:#f3f4f6; overflow:hidden; font-family:'Open Sans', sans-serif; }
+  .slide-container { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; background-color:#ffffff; overflow:hidden; }
+  .font-montserrat { font-family:'Montserrat', sans-serif; }
+  .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
+  .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
+
+  .flow-row { display:flex; align-items:flex-start; justify-content:center; }
+
+  .flow-step { display:flex; flex-direction:column; align-items:center; width:202px; flex-shrink:0; }
+  .step-card {
+    position:relative; width:100%; min-height:172px; background:#F8FAFC;
+    border:2px solid #E2E8F0; border-radius:16px; padding:18px 12px 14px;
+    box-shadow:0 4px 10px rgba(0,0,0,.06);
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+  }
+  .step-card.gold {
+    background:linear-gradient(180deg,#FFFDF0 0%,#FFF3C4 100%);
+    border:2px solid #FFD700;
+    box-shadow:0 12px 24px -10px rgba(180,131,0,.45);
+  }
+  .step-icon {
+    width:56px; height:56px; border-radius:50%; margin-bottom:12px;
+    display:flex; align-items:center; justify-content:center; font-size:23px;
+    background:linear-gradient(135deg,#60A5FA 0%,#003366 100%); color:#fff;
+  }
+  .step-card.gold .step-icon {
+    background:linear-gradient(135deg,#003366 0%,#0066CC 100%); color:#FFD700;
+    box-shadow:0 6px 14px -4px rgba(0,51,102,.5);
+  }
+  .step-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px; color:#003366; line-height:1.28; }
+  .step-sub { font-family:'Open Sans',sans-serif; font-size:12px; color:#6B7280; margin-top:5px; line-height:1.3; }
+  .step-card.gold .step-sub { color:#92700A; }
+
+  .step-badge {
+    position:absolute; top:-14px; right:-14px; width:32px; height:32px; border-radius:50%;
+    background:linear-gradient(135deg,#FFE066 0%,#FFD700 100%); color:#003366;
+    font-family:'Montserrat',sans-serif; font-weight:900; font-size:15px;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 10px rgba(180,131,0,.5); border:2.5px solid #ffffff;
+  }
+
+  .flow-arrow { display:flex; align-items:center; justify-content:center; width:42px; flex-shrink:0; padding-top:70px; }
+  .flow-arrow .line { width:20px; height:2px; background:#CBD5E1; }
+  .flow-arrow i { color:#94A3B8; font-size:13px; margin-left:1px; }
+
+  .legend-pill {
+    display:inline-flex; align-items:center; gap:12px;
+    background:#FFFBEA; border:1.5px solid #FFD700; border-radius:999px;
+    padding:11px 30px; box-shadow:0 4px 12px rgba(180,131,0,.14);
+  }
+
+  .bg-pattern { position:absolute; bottom:-70px; right:-50px; font-size:24rem; opacity:.035; color:#003366; z-index:0; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Barras de topo -->
+  <div style="height:12px;background:#003366;width:100%;"></div>
+  <div style="height:6px;background:#0066CC;width:100%;"></div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-16 pt-8 pb-3 z-10">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-1.5 h-9 bg-brand-secondary"></div>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">O caminho de um processo no SFIS</h1>
+      </div>
+      <p class="text-gray-500 font-medium ml-4 text-lg">Onde você entra nessa história</p>
+    </div>
+    <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
+      <i class="fas fa-route text-xl"></i>
+      <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">LEGADOS</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="flex-1 flex flex-col items-center justify-center z-10 min-h-0" style="gap:40px;">
+
+    <div class="flow-row">
+
+      <div class="flow-step">
+        <div class="step-card">
+          <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
+          <p class="step-title">Ordem de Serviço</p>
+          <p class="step-sub">Planejamento da ação</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow"><div class="line"></div><i class="fas fa-chevron-right"></i></div>
+
+      <div class="flow-step">
+        <div class="step-card gold">
+          <span class="step-badge">1</span>
+          <div class="step-icon"><i class="fas fa-folder-plus"></i></div>
+          <p class="step-title">Cadastro do processo</p>
+          <p class="step-sub">No SFIS</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow"><div class="line"></div><i class="fas fa-chevron-right"></i></div>
+
+      <div class="flow-step">
+        <div class="step-card">
+          <div class="step-icon"><i class="fas fa-binoculars"></i></div>
+          <p class="step-title">Ação fiscal</p>
+          <p class="step-sub">Campo ou remota</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow"><div class="line"></div><i class="fas fa-chevron-right"></i></div>
+
+      <div class="flow-step">
+        <div class="step-card gold">
+          <span class="step-badge">2</span>
+          <div class="step-icon"><i class="fas fa-file-circle-exclamation"></i></div>
+          <p class="step-title">Geração de NOCI</p>
+          <p class="step-sub">Quando cabível</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow"><div class="line"></div><i class="fas fa-chevron-right"></i></div>
+
+      <div class="flow-step">
+        <div class="step-card gold">
+          <span class="step-badge">3</span>
+          <div class="step-icon"><i class="fas fa-gavel"></i></div>
+          <p class="step-title">Autuação</p>
+          <p class="step-sub">Formalização da infração</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow"><div class="line"></div><i class="fas fa-chevron-right"></i></div>
+
+      <div class="flow-step">
+        <div class="step-card gold">
+          <span class="step-badge">4</span>
+          <div class="step-icon"><i class="fas fa-paper-plane"></i></div>
+          <p class="step-title">Submissão à chefia</p>
+          <p class="step-sub">Para decisão</p>
+        </div>
+      </div>
+
+      <div class="flow-arrow"><div class="line"></div><i class="fas fa-chevron-right"></i></div>
+
+      <div class="flow-step">
+        <div class="step-card">
+          <div class="step-icon"><i class="fas fa-scale-balanced"></i></div>
+          <p class="step-title">Deliberação</p>
+          <p class="step-sub">Homologação, devolução ou PAS</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="legend-pill">
+      <i class="fas fa-bullseye" style="color:#B45309;"></i>
+      <p class="font-montserrat" style="font-weight:700;font-size:15px;color:#7A5B00;">Etapas <span style="color:#B45309;">① – ④</span> em destaque = o que vamos praticar agora.</p>
+    </div>
+
+  </div>
+
+  <!-- Rodapé -->
+  <div class="px-16 pb-6 flex justify-between items-center z-10">
+    <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
+    <p class="text-gray-300 text-xs font-mono">11 / 34</p>
+  </div>
+
+  <!-- Marca d'água decorativa -->
+  <div class="bg-pattern"><i class="fas fa-route"></i></div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

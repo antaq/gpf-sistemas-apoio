@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sumário · Módulo 3 — Prática em Sistemas de Apoio à Fiscalização</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
+<link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  html { font-size: 26px; }
+  body { margin:0; padding:0; background-color:#f3f4f6; overflow:hidden; font-family:'Open Sans', sans-serif; }
+  .slide-container { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; background-color:#ffffff; overflow:hidden; }
+  .font-montserrat { font-family:'Montserrat', sans-serif; }
+  .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
+  .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
+
+  .top-accent { height:12px; background:#003366; width:100%; }
+  .top-accent-secondary { height:6px; background:#0066CC; width:100%; }
+
+  .summary-grid {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap:26px;
+    width:100%;
+    flex:1;
+    min-height:0;
+  }
+  .sum-card {
+    background:#fff;
+    border:1px solid #E5E7EB;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 24px -10px rgba(0,0,0,.16);
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+  }
+  .sum-card-header {
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:15px 24px;
+    color:#fff;
+    flex-shrink:0;
+  }
+  .sc-icon {
+    width:44px; height:44px; border-radius:12px; flex-shrink:0;
+    background:rgba(255,255,255,.20);
+    display:flex; align-items:center; justify-content:center; font-size:19px;
+  }
+  .sc-text { flex:1; min-width:0; }
+  .sc-label { font-family:'Montserrat'; font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; opacity:.85; margin:0 0 2px; }
+  .sc-title { font-family:'Montserrat'; font-size:19px; font-weight:800; margin:0; line-height:1.2; }
+  .sc-count {
+    font-family:'Montserrat'; font-size:11px; font-weight:700; letter-spacing:.05em;
+    background:rgba(255,255,255,.20); border-radius:999px; padding:5px 13px;
+    white-space:nowrap; flex-shrink:0; text-transform:uppercase;
+  }
+  .sum-card-body {
+    flex:1; min-height:0;
+    display:flex; flex-wrap:wrap; align-content:center; align-items:center;
+    gap:12px; padding:18px 26px;
+    background:#FBFCFE;
+  }
+  .chip {
+    display:inline-flex; align-items:center; gap:9px;
+    background:#fff; border:1.5px solid var(--chip-c); border-radius:999px;
+    padding:9px 17px; font-family:'Open Sans'; font-weight:700; font-size:15px;
+    color:#1F2937; box-shadow:0 2px 5px rgba(0,0,0,.05); line-height:1;
+  }
+  .chip i { color:var(--chip-c); font-size:13px; }
+  .chip-highlight { background:var(--chip-c); color:#fff; }
+  .chip-highlight i { color:#fff; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Barras de topo -->
+  <div class="top-accent"></div>
+  <div class="top-accent-secondary"></div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-16 pt-8 pb-3 z-10">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-1.5 h-9 bg-brand-secondary"></div>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">Sumário</h1>
+      </div>
+      <p class="text-gray-500 font-medium ml-4 text-lg">Quatro blocos, do consolidado ao emergente</p>
+    </div>
+    <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
+      <i class="fas fa-list-check text-xl"></i>
+      <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">ABERTURA</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="flex-1 flex flex-col px-16 pb-6 z-10 min-h-0">
+    <div class="summary-grid">
+
+      <!-- Bloco 1 -->
+      <div class="sum-card">
+        <div class="sum-card-header" style="background:linear-gradient(135deg,#0066CC 0%,#00478F 100%);">
+          <div class="sc-icon"><i class="fas fa-server"></i></div>
+          <div class="sc-text">
+            <p class="sc-label">Bloco 1</p>
+            <p class="sc-title">Sistemas Internos Legados</p>
+          </div>
+          <span class="sc-count">4 sistemas</span>
+        </div>
+        <div class="sum-card-body">
+          <span class="chip" style="--chip-c:#0066CC;"><i class="fas fa-building"></i>Corporativo</span>
+          <span class="chip" style="--chip-c:#0066CC;"><i class="fas fa-file-contract"></i>Arrendamentov2</span>
+          <span class="chip" style="--chip-c:#0066CC;"><i class="fas fa-ship"></i>SAMA</span>
+          <span class="chip chip-highlight" style="--chip-c:#0066CC;"><i class="fas fa-keyboard"></i>SFIS + prática guiada</span>
+        </div>
+      </div>
+
+      <!-- Bloco 2 -->
+      <div class="sum-card">
+        <div class="sum-card-header" style="background:linear-gradient(135deg,#0E7490 0%,#0B5A70 100%);">
+          <div class="sc-icon"><i class="fas fa-cubes"></i></div>
+          <div class="sc-text">
+            <p class="sc-label">Bloco 2</p>
+            <p class="sc-title">Sistemas Internos da GPF</p>
+          </div>
+          <span class="sc-count">6 sistemas</span>
+        </div>
+        <div class="sum-card-body">
+          <span class="chip" style="--chip-c:#0E7490;"><i class="fas fa-clipboard-list"></i>SisPAT</span>
+          <span class="chip" style="--chip-c:#0E7490;"><i class="fas fa-folder-tree"></i>SAI</span>
+          <span class="chip" style="--chip-c:#0E7490;"><i class="fas fa-screwdriver-wrench"></i>CEF</span>
+          <span class="chip" style="--chip-c:#0E7490;"><i class="fas fa-inbox"></i>Demandas SFC</span>
+          <span class="chip" style="--chip-c:#0E7490;"><i class="fas fa-headset"></i>SuporteGPF</span>
+          <span class="chip" style="--chip-c:#0E7490;"><i class="fas fa-plane-departure"></i>AeroSFC</span>
+        </div>
+      </div>
+
+      <!-- Bloco 3 -->
+      <div class="sum-card">
+        <div class="sum-card-header" style="background:linear-gradient(135deg,#047857 0%,#035C41 100%);">
+          <div class="sc-icon"><i class="fas fa-satellite-dish"></i></div>
+          <div class="sc-text">
+            <p class="sc-label">Bloco 3</p>
+            <p class="sc-title">Sistemas Externos</p>
+          </div>
+          <span class="sc-count">2 sistemas</span>
+        </div>
+        <div class="sum-card-body">
+          <span class="chip" style="--chip-c:#047857;"><i class="fas fa-magnifying-glass"></i>Sinesp Infoseg</span>
+          <span class="chip" style="--chip-c:#047857;"><i class="fas fa-network-wired"></i>RedeMAIS</span>
+        </div>
+      </div>
+
+      <!-- Bloco 4 -->
+      <div class="sum-card">
+        <div class="sum-card-header" style="background:linear-gradient(135deg,#B45309 0%,#8F4207 100%);">
+          <div class="sc-icon"><i class="fas fa-toolbox"></i></div>
+          <div class="sc-text">
+            <p class="sc-label">Bloco 4</p>
+            <p class="sc-title">Outras Ferramentas</p>
+          </div>
+          <span class="sc-count">3 ferramentas</span>
+        </div>
+        <div class="sum-card-body">
+          <span class="chip" style="--chip-c:#B45309;"><i class="fas fa-book"></i>WikiSFC</span>
+          <span class="chip" style="--chip-c:#B45309;"><i class="fas fa-mobile-screen"></i>SFIS Mobile</span>
+          <span class="chip" style="--chip-c:#B45309;"><i class="fas fa-clipboard-check"></i>ProTEU</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <div class="px-16 pb-6 flex justify-between items-center z-10">
+    <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
+    <p class="text-gray-300 text-xs font-mono">3 / 34</p>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

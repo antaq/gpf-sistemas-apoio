@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Antes de precisar, garanta seus acessos</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
+<link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  html { font-size: 26px; }
+  body { margin:0; padding:0; background-color:#f3f4f6; overflow:hidden; font-family:'Open Sans', sans-serif; }
+  .slide-container { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; background-color:#ffffff; overflow:hidden; }
+  .font-montserrat { font-family:'Montserrat', sans-serif; }
+  .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
+  .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
+
+  /* Item de checklist */
+  .access-item {
+    display:flex; align-items:center; gap:22px;
+    background:#F8FAFC; border-radius:16px; padding:24px 28px;
+    box-shadow:0 4px 12px -4px rgba(0,0,0,.08);
+    border-left:5px solid #94A3B8;
+  }
+  .access-pill {
+    font-family:'Montserrat',sans-serif; font-weight:800; font-size:13px; color:#fff;
+    padding:7px 16px; border-radius:999px; white-space:nowrap; text-transform:uppercase;
+    letter-spacing:.03em; text-align:center; flex-shrink:0;
+  }
+  .access-icon {
+    flex-shrink:0; width:58px; height:58px; border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:25px;
+    background:linear-gradient(135deg,#0066CC 0%,#003366 100%);
+  }
+  .access-text { min-width:0; }
+  .access-title { font-family:'Montserrat',sans-serif; font-weight:800; font-size:21px; color:#003366; line-height:1.2; }
+  .access-desc { color:#4B5563; font-size:16px; line-height:1.38; margin-top:4px; }
+
+  .item-1 { border-left-color:#94A3B8; } .item-1 .access-pill { background:#94A3B8; }
+  .item-2 { border-left-color:#60A5FA; } .item-2 .access-pill { background:#60A5FA; }
+  .item-3 { border-left-color:#3B82F6; } .item-3 .access-pill { background:#3B82F6; }
+  .item-4 { border-left-color:#2563EB; } .item-4 .access-pill { background:#2563EB; }
+  .item-5 { border-left-color:#1D4ED8; } .item-5 .access-pill { background:#1D4ED8; }
+  .item-6 { border-left-color:#003366; } .item-6 .access-pill { background:#003366; }
+
+  .bg-pattern { position:absolute; bottom:-70px; right:-50px; font-size:26rem; opacity:.04; color:#003366; z-index:0; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Barras de topo -->
+  <div style="height:12px;background:#003366;width:100%;"></div>
+  <div style="height:6px;background:#0066CC;width:100%;"></div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-16 pt-8 pb-3 z-10">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-1.5 h-9 bg-brand-secondary"></div>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">Antes de precisar, garanta seus acessos</h1>
+      </div>
+      <p class="text-gray-500 font-medium ml-4 text-lg">O checklist da primeira semana</p>
+    </div>
+    <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
+      <i class="fas fa-key text-xl"></i>
+      <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SÍNTESE</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="flex-1 flex flex-col justify-center px-16 pb-6 z-10 min-h-0">
+    <div class="grid grid-cols-2 gap-x-12 gap-y-8">
+
+      <!-- Coluna esquerda -->
+      <div class="flex flex-col gap-8">
+        <div class="access-item item-1">
+          <span class="access-pill">Passo 1</span>
+          <div class="access-icon"><i class="fas fa-network-wired"></i></div>
+          <div class="access-text">
+            <p class="access-title">Rede interna / VPN</p>
+            <p class="access-desc">Pré-requisito de tudo: sem ela, nenhum sistema legado abre fora da ANTAQ.</p>
+          </div>
+        </div>
+        <div class="access-item item-2">
+          <span class="access-pill">Passo 2</span>
+          <div class="access-icon"><i class="fas fa-desktop"></i></div>
+          <div class="access-text">
+            <p class="access-title">Perfil no SFIS</p>
+            <p class="access-desc">Solicite à chefia imediata ou ao SuporteGPF.</p>
+          </div>
+        </div>
+        <div class="access-item item-3">
+          <span class="access-pill">Passo 3</span>
+          <div class="access-icon"><i class="fa-brands fa-microsoft"></i></div>
+          <div class="access-text">
+            <p class="access-title">Conta Microsoft institucional</p>
+            <p class="access-desc">A chave de entrada para os sistemas do GPF.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna direita -->
+      <div class="flex flex-col gap-8">
+        <div class="access-item item-4">
+          <span class="access-pill">Passo 4</span>
+          <div class="access-icon"><i class="fas fa-user-shield"></i></div>
+          <div class="access-text">
+            <p class="access-title">Sinesp Infoseg</p>
+            <p class="access-desc">Credenciamento individual, intermediado pela GPF.</p>
+          </div>
+        </div>
+        <div class="access-item item-5">
+          <span class="access-pill">Passo 5</span>
+          <div class="access-icon"><i class="fas fa-satellite"></i></div>
+          <div class="access-text">
+            <p class="access-title">RedeMAIS</p>
+            <p class="access-desc">Cadastro na plataforma, intermediado pela GPF.</p>
+          </div>
+        </div>
+        <div class="access-item item-6">
+          <span class="access-pill">Passo 6</span>
+          <div class="access-icon"><i class="fas fa-book-open"></i></div>
+          <div class="access-text">
+            <p class="access-title">WikiSFC</p>
+            <p class="access-desc">Acesso pela intranet — salve nos favoritos hoje.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <div class="px-16 pb-6 flex justify-between items-center z-10">
+    <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
+    <p class="text-gray-300 text-xs font-mono">33 / 34</p>
+  </div>
+
+  <!-- Marca d'água decorativa -->
+  <div class="bg-pattern"><i class="fas fa-key"></i></div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

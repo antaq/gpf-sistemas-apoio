@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Os 6 erros que você não vai cometer</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
+<link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  html { font-size: 26px; }
+  body { margin:0; padding:0; background-color:#f3f4f6; overflow:hidden; font-family:'Open Sans', sans-serif; }
+  .slide-container { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; background-color:#ffffff; overflow:hidden; }
+  .font-montserrat { font-family:'Montserrat', sans-serif; }
+  .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
+  .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
+
+  /* Grade de erros */
+  .err-grid {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap:38px 32px;
+  }
+  .err-card {
+    position:relative;
+    background:#FEF2F2;
+    border:1px solid #FECACA;
+    border-left:6px solid #DC2626;
+    border-radius:16px;
+    padding:38px 32px 34px 30px;
+    box-shadow:0 10px 20px -10px rgba(220,38,38,.28);
+    display:flex;
+    align-items:flex-start;
+    gap:22px;
+  }
+  .err-num {
+    position:absolute; top:12px; right:20px;
+    font-family:'Montserrat', sans-serif; font-weight:900; font-size:50px;
+    color:#FCA5A5; opacity:.55; line-height:1; user-select:none; pointer-events:none;
+  }
+  .err-icon {
+    width:74px; height:74px; border-radius:17px; flex-shrink:0;
+    background:linear-gradient(135deg,#EF4444 0%,#B91C1C 100%);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 16px -6px rgba(185,28,28,.55);
+  }
+  .err-icon i { color:#fff; font-size:31px; }
+  .err-title {
+    font-family:'Montserrat', sans-serif; font-weight:800; font-size:23px;
+    color:#003366; margin-bottom:10px; line-height:1.22;
+  }
+  .err-desc { font-size:17.5px; color:#4B5563; line-height:1.5; }
+
+  /* Faixa verde de boas práticas */
+  .gp-banner {
+    display:flex; align-items:center; gap:22px;
+    background:linear-gradient(135deg,#047857 0%,#059669 100%);
+    border-radius:14px; padding:28px 36px;
+    box-shadow:0 10px 22px -8px rgba(4,120,87,.45);
+  }
+  .gp-banner .gp-icon { font-size:33px; color:#fff; flex-shrink:0; }
+  .gp-banner .gp-label {
+    display:block; font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px;
+    letter-spacing:.12em; text-transform:uppercase; color:#D1FAE5; margin-bottom:5px;
+  }
+  .gp-banner .gp-text { font-family:'Montserrat',sans-serif; font-weight:600; font-size:20.5px; color:#fff; }
+
+  .bg-pattern { position:absolute; bottom:-70px; right:-50px; font-size:24rem; opacity:.035; color:#DC2626; z-index:0; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Barras de topo -->
+  <div style="height:12px;background:#003366;width:100%;"></div>
+  <div style="height:6px;background:#0066CC;width:100%;"></div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-16 pt-7 pb-2 z-10">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-1.5 h-9 bg-brand-secondary"></div>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">Os 6 erros que você não vai cometer</h1>
+      </div>
+      <p class="text-gray-500 font-medium ml-4 text-lg">Aprendendo com o retrabalho dos outros</p>
+    </div>
+    <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
+      <i class="fas fa-triangle-exclamation text-xl"></i>
+      <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SFIS · PRÁTICA</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="flex-1 flex flex-col justify-center px-16 pb-6 z-10 min-h-0" style="gap:52px;">
+
+    <div class="err-grid">
+      <div class="err-card">
+        <span class="err-num">01</span>
+        <div class="err-icon"><i class="fas fa-copy"></i></div>
+        <div>
+          <p class="err-title">Processo duplicado</p>
+          <p class="err-desc">Pesquise antes de criar: outro processo pode já cobrir a mesma ação.</p>
+        </div>
+      </div>
+
+      <div class="err-card">
+        <span class="err-num">02</span>
+        <div class="err-icon"><i class="fas fa-user-xmark"></i></div>
+        <div>
+          <p class="err-title">Fiscalizado errado</p>
+          <p class="err-desc">Valide o CNPJ no Corporativo antes de vincular a empresa ao processo.</p>
+        </div>
+      </div>
+
+      <div class="err-card">
+        <span class="err-num">03</span>
+        <div class="err-icon"><i class="fas fa-section"></i></div>
+        <div>
+          <p class="err-title">Enquadramento genérico</p>
+          <p class="err-desc">Norma sem artigo e inciso não para em pé na autuação.</p>
+        </div>
+      </div>
+
+      <div class="err-card">
+        <span class="err-num">04</span>
+        <div class="err-icon"><i class="fas fa-paperclip"></i></div>
+        <div>
+          <p class="err-title">Evidência não anexada</p>
+          <p class="err-desc">O que não está no processo não existe para efeito de prova.</p>
+        </div>
+      </div>
+
+      <div class="err-card">
+        <span class="err-num">05</span>
+        <div class="err-icon"><i class="fas fa-calendar-xmark"></i></div>
+        <div>
+          <p class="err-title">Datas inconsistentes</p>
+          <p class="err-desc">Ação antes da OS, notificação antes da ação — a linha do tempo tem que fechar.</p>
+        </div>
+      </div>
+
+      <div class="err-card">
+        <span class="err-num">06</span>
+        <div class="err-icon"><i class="fas fa-hourglass-half"></i></div>
+        <div>
+          <p class="err-title">Esquecer de submeter</p>
+          <p class="err-desc">Processo pronto parado na mesa não produz nenhum efeito.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Faixa de boas práticas -->
+    <div class="gp-banner">
+      <i class="fas fa-circle-check gp-icon"></i>
+      <p>
+        <span class="gp-label">Boas práticas</span>
+        <span class="gp-text">Conferência em dupla antes de submeter · Em dúvida, WikiSFC · Problema de sistema, SuporteGPF.</span>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Rodapé -->
+  <div class="px-16 pb-6 flex justify-between items-center z-10">
+    <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
+    <p class="text-gray-300 text-xs font-mono">17 / 34</p>
+  </div>
+
+  <!-- Marca d'água decorativa -->
+  <div class="bg-pattern"><i class="fas fa-triangle-exclamation"></i></div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

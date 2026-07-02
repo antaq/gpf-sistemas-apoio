@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>O que você vai levar deste módulo</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
+<link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  html { font-size: 26px; }
+  body { margin:0; padding:0; background-color:#f3f4f6; overflow:hidden; font-family:'Open Sans', sans-serif; }
+  .slide-container { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; background-color:#ffffff; overflow:hidden; }
+  .font-montserrat { font-family:'Montserrat', sans-serif; }
+  .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
+  .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
+
+  .top-accent { height:12px; background:#003366; width:100%; }
+  .top-accent-secondary { height:6px; background:#0066CC; width:100%; }
+
+  .intro-line {
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:21px;
+    color:#003366;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+  }
+  .intro-line i { color:#0066CC; font-size:19px; }
+
+  .obj-grid {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:22px 28px;
+  }
+  .obj-card {
+    background:#F8FAFC;
+    border:1px solid #E5E7EB;
+    border-left-width:6px;
+    border-left-style:solid;
+    border-radius:14px;
+    padding:22px 26px;
+    box-shadow:0 8px 20px -9px rgba(0,0,0,.16);
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+  }
+  .obj-card:nth-child(1) { border-left-color:#60A5FA; }
+  .obj-card:nth-child(2) { border-left-color:#3B82F6; }
+  .obj-card:nth-child(3) { border-left-color:#2563EB; }
+  .obj-card:nth-child(4) { border-left-color:#003366; }
+
+  .card-num {
+    position:absolute;
+    top:8px;
+    right:18px;
+    font-family:'Montserrat', sans-serif;
+    font-weight:900;
+    font-size:46px;
+    line-height:1;
+    color:#E2E8F0;
+    user-select:none;
+    pointer-events:none;
+  }
+  .obj-icon {
+    width:58px; height:58px; border-radius:13px; flex-shrink:0;
+    background:linear-gradient(135deg,#0066CC 0%,#003366 100%);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 16px -5px rgba(0,51,102,.45);
+  }
+  .obj-icon i { color:#ffffff; font-size:24px; }
+  .obj-title {
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    font-size:19px;
+    color:#003366;
+    margin-bottom:5px;
+    line-height:1.22;
+    padding-right:36px;
+  }
+  .obj-desc {
+    font-size:15.5px;
+    line-height:1.48;
+    color:#4B5563;
+  }
+
+  .focus-badge {
+    margin-top:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    background:#003366;
+    border-radius:12px;
+    padding:14px 26px;
+    box-shadow:0 8px 18px -8px rgba(0,51,102,.55);
+  }
+  .focus-badge .icon-circle {
+    width:38px; height:38px; flex-shrink:0;
+    border-radius:50%;
+    background:rgba(255,215,0,0.14);
+    border:1px solid rgba(255,215,0,0.4);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .focus-badge .icon-circle i { color:#FFD700; font-size:16px; }
+  .focus-badge p {
+    font-family:'Montserrat', sans-serif;
+    font-weight:600;
+    font-size:17px;
+    color:#ffffff;
+    letter-spacing:.01em;
+  }
+  .focus-badge strong { color:#FFD700; font-weight:800; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Barras de topo -->
+  <div class="top-accent"></div>
+  <div class="top-accent-secondary"></div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-16 pt-8 pb-3 z-10">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-1.5 h-9 bg-brand-secondary"></div>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">O que você vai levar deste módulo</h1>
+      </div>
+      <p class="text-gray-500 font-medium ml-4 text-lg">Objetivos de aprendizagem</p>
+    </div>
+    <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
+      <i class="fas fa-bullseye text-xl"></i>
+      <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">ABERTURA</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="flex-1 flex flex-col justify-center px-16 pb-6 z-10 min-h-0">
+
+    <p class="intro-line"><i class="fas fa-chevron-right"></i> Ao final deste módulo, você será capaz de:</p>
+
+    <div class="obj-grid">
+
+      <div class="obj-card">
+        <span class="card-num">01</span>
+        <div class="obj-icon"><i class="fas fa-magnifying-glass"></i></div>
+        <div>
+          <p class="obj-title">Consultar a fonte certa</p>
+          <p class="obj-desc">Localizar outorgas, contratos de arrendamento e autorizações de afretamento nos sistemas corporativos.</p>
+        </div>
+      </div>
+
+      <div class="obj-card">
+        <span class="card-num">02</span>
+        <div class="obj-icon"><i class="fas fa-keyboard"></i></div>
+        <div>
+          <p class="obj-title">Operar o SFIS</p>
+          <p class="obj-desc">Executar o ciclo básico do processo de fiscalização: cadastro → NOCI → autuação → submissão à chefia.</p>
+        </div>
+      </div>
+
+      <div class="obj-card">
+        <span class="card-num">03</span>
+        <div class="obj-icon"><i class="fas fa-cubes"></i></div>
+        <div>
+          <p class="obj-title">Navegar no ecossistema GPF</p>
+          <p class="obj-desc">Saber o que cada aplicativo faz e onde pedir apoio dentro da Gerência de Planejamento e Inteligência.</p>
+        </div>
+      </div>
+
+      <div class="obj-card">
+        <span class="card-num">04</span>
+        <div class="obj-icon"><i class="fas fa-satellite-dish"></i></div>
+        <div>
+          <p class="obj-title">Conhecer as fontes externas</p>
+          <p class="obj-desc">Entender o que são o Sinesp Infoseg e a RedeMAIS, e como se solicita acesso a cada uma.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="focus-badge">
+      <div class="icon-circle"><i class="fas fa-bullseye"></i></div>
+      <p>Foco: <strong>o dia a dia do Técnico em Regulação na SFC</strong></p>
+    </div>
+
+  </div>
+
+  <!-- Rodapé -->
+  <div class="px-16 pb-6 flex justify-between items-center z-10">
+    <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
+    <p class="text-gray-300 text-xs font-mono">2 / 34</p>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

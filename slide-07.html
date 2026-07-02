@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sistema Corporativo</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
+<link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  html { font-size: 26px; }
+  body { margin:0; padding:0; background-color:#f3f4f6; overflow:hidden; font-family:'Open Sans', sans-serif; }
+  .slide-container { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; background-color:#ffffff; overflow:hidden; }
+  .font-montserrat { font-family:'Montserrat', sans-serif; }
+  .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
+  .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
+
+  .card {
+    background:#F8FAFC; border-left:5px solid #0066CC; border-radius:12px;
+    padding:15px 28px; box-shadow:0 2px 6px rgba(0,0,0,.06);
+  }
+  .card p.title { font-family:'Montserrat', sans-serif; font-weight:700; color:#003366; font-size:25px; margin-bottom:7px; display:flex; align-items:center; gap:14px; }
+  .card p.title i { color:#0066CC; background:#E3EEFB; border-radius:11px; width:44px; height:44px;
+    display:inline-flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .card p.desc { color:#4B5563; font-size:20px; line-height:1.5; }
+
+  /* Mockup do KIT */
+  .browser-mock { border-radius:14px; overflow:hidden; border:1px solid #E5E7EB;
+    box-shadow:0 16px 30px -10px rgba(0,0,0,.28); background:#fff; display:flex; flex-direction:column; }
+  .bm-bar { display:flex; align-items:center; gap:14px; padding:10px 16px; background:#E8EEF5; border-bottom:1px solid #D5DFEA; }
+  .bm-dots { display:flex; gap:7px; }
+  .bm-dot { width:12px; height:12px; border-radius:50%; }
+  .bm-url { flex:1; background:#fff; border:1px solid #D5DFEA; border-radius:999px;
+    padding:5px 14px; font-family:'Montserrat',sans-serif; font-size:12px; color:#64748B;
+    display:flex; align-items:center; gap:8px; }
+  .bm-body { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:14px; padding:34px 24px; background:linear-gradient(135deg,#F8FAFC 0%,#EEF4FB 100%); }
+  .bm-body .glyph { width:104px; height:104px; border-radius:24px;
+    background:linear-gradient(135deg,#0066CC 0%,#003366 100%); display:flex; align-items:center;
+    justify-content:center; box-shadow:0 14px 28px -8px rgba(0,51,102,.45); }
+  .bm-body .glyph i { color:#fff; font-size:50px; }
+  .bm-body .cap { font-family:'Montserrat',sans-serif; font-weight:700; font-size:17px; color:#334155; }
+  .bm-live { display:inline-flex; align-items:center; gap:8px; font-family:'Montserrat',sans-serif;
+    font-weight:700; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#0066CC;
+    background:#DBEAFE; border-radius:999px; padding:5px 14px; }
+
+  .access-chip {
+    display:inline-flex; align-items:center; gap:14px;
+    background:linear-gradient(135deg,#003366 0%,#0066CC 100%);
+    border-radius:999px; padding:12px 24px;
+    box-shadow:0 8px 18px -6px rgba(0,51,102,.5);
+  }
+  .access-chip .badge {
+    width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.16);
+    display:flex; align-items:center; justify-content:center; color:#FFD700; font-size:15px;
+  }
+  .access-chip .url { color:#fff; font-family:'Montserrat', sans-serif; font-weight:700; font-size:18px; letter-spacing:.01em; }
+
+  .bg-pattern { position:absolute; bottom:-70px; right:-50px; font-size:26rem; opacity:.04; color:#003366; z-index:0; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Barras de topo -->
+  <div style="height:12px;background:#003366;width:100%;"></div>
+  <div style="height:6px;background:#0066CC;width:100%;"></div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-16 pt-8 pb-3 z-10">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-1.5 h-9 bg-brand-secondary"></div>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">Sistema Corporativo</h1>
+      </div>
+      <p class="text-gray-500 font-medium ml-4 text-lg">O cadastro-mestre da Agência</p>
+    </div>
+    <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
+      <i class="fas fa-building text-xl"></i>
+      <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">LEGADOS</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="flex-1 flex z-10 min-h-0 px-16 pb-4 gap-10">
+
+    <!-- ESQUERDA — cartões -->
+    <div class="flex flex-col justify-between gap-3 min-h-0" style="flex:1.25;">
+      <div class="card">
+        <p class="title"><i class="fas fa-folder-tree"></i> O que registra</p>
+        <p class="desc">Empresas, embarcações, portos e instalações portuárias privadas; outorgas (autorizações de EBNs, TUPs etc.); esquema operacional (linha, chegada, partida, horários); frota das empresas de navegação interior e marítima.</p>
+      </div>
+      <div class="card">
+        <p class="title"><i class="fas fa-user-gear"></i> Área gestora</p>
+        <p class="desc">GOA/SOG.</p>
+      </div>
+      <div class="card">
+        <p class="title"><i class="fas fa-clipboard-check"></i> Quando o Técnico usa</p>
+        <p class="desc">Para confirmar se a empresa possui outorga vigente e para obter dados cadastrais usados em notificações e intimações.</p>
+      </div>
+
+      <div class="mt-1">
+        <a class="access-chip" href="https://corporativo.antaq.gov.br/Corporativo/" target="_blank" rel="noopener">
+          <span class="badge"><i class="fas fa-arrow-up-right-from-square"></i></span>
+          <span class="url">corporativo.antaq.gov.br/Corporativo/</span>
+        </a>
+        <p class="text-gray-500 mt-1 leading-snug" style="font-size:18px;">
+          <i class="fas fa-chart-column text-brand-secondary mr-1"></i>
+          Painéis BI: Outorgas da Navegação · Instalações Privadas <span class="text-gray-400">(Portal ANTAQ › Central de Conteúdos › Painéis)</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- DIREITA — Mockup -->
+    <div class="flex flex-col min-h-0 justify-center items-center" style="flex:1;">
+      <div class="browser-mock" style="width:100%; max-height:82%;">
+        <div class="bm-bar">
+          <div class="bm-dots"><span class="bm-dot" style="background:#F87171;"></span>
+            <span class="bm-dot" style="background:#FBBF24;"></span>
+            <span class="bm-dot" style="background:#34D399;"></span></div>
+          <div class="bm-url"><i class="fas fa-lock" style="font-size:10px;"></i> corporativo.antaq.gov.br/Corporativo/</div>
+        </div>
+        <div class="bm-body">
+          <div class="glyph"><i class="fas fa-building"></i></div>
+          <p class="cap">Sistema Corporativo</p>
+          <span class="bm-live"><i class="fas fa-circle-play"></i> Demonstração ao vivo</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Rodapé -->
+  <div class="px-16 pb-6 flex justify-between items-center z-10">
+    <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
+    <p class="text-gray-300 text-xs font-mono">7 / 34</p>
+  </div>
+
+  <!-- Marca d'água decorativa -->
+  <div class="bg-pattern"><i class="fas fa-building"></i></div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

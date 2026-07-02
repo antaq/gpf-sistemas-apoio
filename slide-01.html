@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 3 — Prática em Sistemas de Apoio à Fiscalização · Capa</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
+<link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  html { font-size: 26px; }
+  body { margin:0; padding:0; overflow:hidden; background-color:#f3f4f6; font-family:'Open Sans', sans-serif; }
+  .slide-container {
+    width:100vw; height:100vh; position:relative;
+    display:flex; flex-direction:column;
+    background: linear-gradient(135deg, #002244 0%, #003366 50%, #004488 100%);
+    overflow:hidden; color:white;
+  }
+  .font-montserrat { font-family:'Montserrat', sans-serif; }
+  .font-opensans { font-family:'Open Sans', sans-serif; }
+  .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
+  .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
+  .shape-bg {
+    position:absolute; top:0; right:0; width:45%; height:100%;
+    background-color: rgba(255,255,255,0.03);
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index:1;
+  }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Forma decorativa diagonal -->
+  <div class="shape-bg"></div>
+
+  <!-- Marca d'água: logo azul invertida para branco -->
+  <img src="Imagens/logo-antaq-azul.png" alt="" class="absolute top-1/2"
+       style="left:80%; width:55vw; max-width:880px; transform:translate(-50%,-50%); opacity:0.08; z-index:2; pointer-events:none; filter:brightness(0) invert(1);" />
+
+  <!-- Ícone decorativo gigante (animado) -->
+  <div id="bg-icon-wrap" class="absolute bottom-0 right-0 text-white z-0" style="font-size:520px; line-height:0; opacity:0.05; transform:translate(18%,18%); transition:opacity 0.7s ease;">
+    <i id="bg-icon" class="fas fa-laptop-code"></i>
+  </div>
+
+  <!-- Acentos à esquerda -->
+  <div class="absolute left-0 top-0 h-full w-3 z-20" style="background-color:#FFD700;"></div>
+  <div class="absolute left-3 top-0 h-full w-1 bg-brand-secondary z-20"></div>
+
+  <!-- Conteúdo principal -->
+  <div class="relative z-10 flex flex-col justify-center h-full w-full pl-24 pr-16 font-montserrat">
+
+    <!-- Cabeçalho / organização -->
+    <div class="absolute top-16 left-24 flex items-center gap-4">
+      <img src="Imagens/logo-antaq-branca.png" alt="Logo ANTAQ" style="height:48px; width:auto;" />
+      <div style="border-left:1px solid rgba(255,255,255,0.25); padding-left:16px;">
+        <p class="text-blue-200 text-sm font-bold tracking-widest uppercase">Agência Nacional de Transportes Aquaviários</p>
+        <p class="text-blue-300 text-xs font-semibold tracking-wider uppercase opacity-80">Superintendência de Fiscalização · SFC / GPF</p>
+      </div>
+    </div>
+
+    <!-- Rótulo superior -->
+    <div class="mt-6 mb-2 flex items-center gap-3">
+      <div class="w-10 h-0.5" style="background-color:#FFD700;"></div>
+      <p class="text-blue-200 text-base font-semibold tracking-[0.3em] uppercase">Curso de Introdução à Fiscalização · SFC</p>
+    </div>
+
+    <!-- Bloco de título -->
+    <div class="mt-2">
+      <div class="flex items-center gap-7 mb-5">
+        <div class="h-24 w-24 rounded-2xl flex items-center justify-center flex-shrink-0"
+             style="background-color:rgba(255,215,0,0.12); border:2px solid rgba(255,215,0,0.45);">
+          <i id="badge-icon" class="fas fa-laptop-code text-6xl" style="color:#FFD700; transition:opacity 0.7s ease;"></i>
+        </div>
+        <h1 class="font-black tracking-tight leading-none" style="font-size:5.0rem;">
+          Prática em <span style="color:#FFD700;">Sistemas de Apoio</span><br/>à Fiscalização
+        </h1>
+      </div>
+      <div class="w-28 h-2 mt-2 mb-6" style="background-color:#FFD700;"></div>
+      <div class="pl-6 max-w-5xl" style="border-left:4px solid rgba(255,255,255,0.25);">
+        <p class="text-2xl text-blue-100 font-light leading-relaxed font-opensans">
+          <strong class="font-bold text-white">Módulo 3</strong> do Curso de Introdução à Fiscalização para novos <strong class="font-bold text-white">Técnicos em Regulação</strong> da SFC
+        </p>
+      </div>
+    </div>
+
+    <!-- Rodapé -->
+    <div class="absolute bottom-12 left-24 right-16 flex justify-between items-end pt-6" style="border-top:1px solid rgba(255,255,255,0.15);">
+      <div class="flex flex-col gap-1 text-xs text-blue-200">
+        <span class="font-semibold uppercase tracking-wider text-blue-100">Canais oficiais ANTAQ</span>
+        <div class="flex flex-wrap items-center gap-4 mt-1">
+          <a href="https://www.facebook.com/ANTAQ.oficial" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-white transition-colors">
+            <i class="fa-brands fa-facebook"></i><span>ANTAQ.oficial</span>
+          </a>
+          <a href="https://www.instagram.com/antaq_oficial/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-white transition-colors">
+            <i class="fa-brands fa-instagram"></i><span>@antaq_oficial</span>
+          </a>
+          <a href="https://www.youtube.com/c/CanalANTAQ/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-white transition-colors">
+            <i class="fa-brands fa-youtube"></i><span>CanalANTAQ</span>
+          </a>
+          <a href="https://www.linkedin.com/company/antaq" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-white transition-colors">
+            <i class="fa-brands fa-linkedin"></i><span>company/antaq</span>
+          </a>
+          <a href="https://x.com/ANTAQ_oficial" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-white transition-colors">
+            <i class="fa-brands fa-twitter"></i><span>@ANTAQ_oficial</span>
+          </a>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="text-right">
+          <p class="text-white font-bold text-lg">O módulo mais operacional</p>
+          <p class="text-xs font-semibold uppercase tracking-wide" style="color:#FFD700;">Onde e como as coisas acontecem</p>
+        </div>
+        <div class="h-10 w-10 rounded-full flex items-center justify-center" style="background-color:#FFD700; color:#003366;">
+          <i class="fas fa-keyboard"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});
+(function(){
+  var icons=['fa-laptop-code','fa-server','fa-keyboard','fa-cubes','fa-satellite-dish','fa-toolbox','fa-map','fa-ship','fa-magnifying-glass','fa-gavel'];
+  var idx=0;
+  var wrap=document.getElementById('bg-icon-wrap');
+  var bgIcon=document.getElementById('bg-icon');
+  var badge=document.getElementById('badge-icon');
+  var sizeClass=(badge.className.match(/text-\w+/)||[''])[0];
+  setInterval(function(){
+    wrap.style.opacity='0';
+    badge.style.opacity='0';
+    setTimeout(function(){
+      idx=(idx+1)%icons.length;
+      bgIcon.className='fas '+icons[idx];
+      badge.className='fas '+icons[idx]+(sizeClass?' '+sizeClass:'');
+      wrap.style.opacity='0.05';
+      badge.style.opacity='1';
+    },700);
+  },3000);
+})();
+</script>
+</body>
+</html>

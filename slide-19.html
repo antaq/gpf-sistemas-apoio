@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dois jeitos de construir sistemas</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
+<link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  html { font-size: 26px; }
+  body { margin:0; padding:0; background-color:#f3f4f6; overflow:hidden; font-family:'Open Sans', sans-serif; }
+  .slide-container { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; background-color:#ffffff; overflow:hidden; }
+  .font-montserrat { font-family:'Montserrat', sans-serif; }
+  .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
+  .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
+
+  /* ── Tabela comparativa ── */
+  .compare-wrap {
+    border-radius:18px; overflow:hidden; border:1px solid #E5E7EB;
+    box-shadow:0 18px 34px -12px rgba(0,51,102,.22);
+  }
+  .compare-table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  .compare-table thead th {
+    background:#003366; color:#fff; font-family:'Montserrat',sans-serif;
+    font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+    font-size:17px; text-align:left; padding:24px 34px;
+  }
+  .compare-table thead th .th-inner { display:flex; align-items:center; gap:10px; }
+  .compare-table thead th.col-gpf { background:linear-gradient(90deg,#003366 0%,#0057AD 100%); position:relative; }
+  .compare-table thead th.col-gpf::before {
+    content:''; position:absolute; top:0; left:0; width:4px; height:100%; background:#FFD700;
+  }
+  .compare-table tbody tr:nth-child(even) td:not(.col-gpf) { background:#F8FAFC; }
+  .compare-table tbody td {
+    padding:23px 34px; font-size:20px; color:#374151; border-bottom:1px solid #E5E7EB;
+    vertical-align:middle;
+  }
+  .compare-table tbody tr:last-child td { border-bottom:none; }
+  .compare-table td.dim-cell {
+    font-family:'Montserrat',sans-serif; font-weight:700; color:#003366; font-size:19px;
+  }
+  .compare-table td.dim-cell i { color:#0066CC; width:22px; text-align:center; margin-right:10px; }
+  .compare-table td.col-gpf {
+    background:#EFF6FF; color:#1E3A8A; font-weight:700; position:relative;
+    border-left:3px solid #0066CC;
+  }
+
+  /* ── Nota de destaque ── */
+  .insight-bar {
+    display:flex; align-items:center; gap:22px;
+    background:linear-gradient(90deg, rgba(0,102,204,.07) 0%, rgba(0,102,204,.015) 100%);
+    border-left:5px solid #0066CC; border-radius:0 14px 14px 0;
+    padding:22px 34px;
+  }
+  .insight-bar .ico {
+    width:52px; height:52px; flex-shrink:0; border-radius:13px;
+    background:linear-gradient(135deg,#0066CC 0%,#003366 100%);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 16px -5px rgba(0,51,102,.45);
+  }
+  .insight-bar .ico i { color:#FFD700; font-size:22px; }
+  .insight-bar p { font-family:'Montserrat',sans-serif; font-weight:700; font-size:21px; color:#003366; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Barras de topo -->
+  <div style="height:12px;background:#003366;width:100%;"></div>
+  <div style="height:6px;background:#0066CC;width:100%;"></div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-16 pt-8 pb-3 z-10">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-1.5 h-9 bg-brand-secondary"></div>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">Dois jeitos de construir sistemas</h1>
+      </div>
+      <p class="text-gray-500 font-medium ml-4 text-lg">O contraste que explica o ecossistema</p>
+    </div>
+    <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
+      <i class="fas fa-code-compare text-xl"></i>
+      <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SISTEMAS GPF</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="flex-1 flex flex-col justify-center gap-8 px-16 pb-6 z-10 min-h-0">
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <colgroup>
+          <col style="width:24%"/>
+          <col style="width:36%"/>
+          <col style="width:40%"/>
+        </colgroup>
+        <thead>
+          <tr>
+            <th><div class="th-inner"><i class="fas fa-scale-balanced"></i> Dimensão</div></th>
+            <th><div class="th-inner"><i class="fas fa-server"></i> Legados</div></th>
+            <th class="col-gpf"><div class="th-inner"><i class="fas fa-cubes"></i> Sistemas GPF</div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="dim-cell"><i class="fas fa-code-branch"></i>Desenvolvimento</td>
+            <td>Centralizado na TI</td>
+            <td class="col-gpf">Descentralizado na GPF</td>
+          </tr>
+          <tr>
+            <td class="dim-cell"><i class="fas fa-layer-group"></i>Plataforma</td>
+            <td>.NET</td>
+            <td class="col-gpf">Oracle APEX <span style="font-weight:600;color:#0066CC;">(low-code)</span></td>
+          </tr>
+          <tr>
+            <td class="dim-cell"><i class="fas fa-database"></i>Banco de dados</td>
+            <td>SQL Server</td>
+            <td class="col-gpf">Oracle</td>
+          </tr>
+          <tr>
+            <td class="dim-cell"><i class="fas fa-network-wired"></i>Acesso</td>
+            <td>Rede interna / VPN</td>
+            <td class="col-gpf">Internet</td>
+          </tr>
+          <tr>
+            <td class="dim-cell"><i class="fas fa-key"></i>Autenticação</td>
+            <td>Credenciais de rede</td>
+            <td class="col-gpf">Conta Microsoft institucional</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight-bar">
+      <div class="ico"><i class="fas fa-lightbulb"></i></div>
+      <p>Low-code = desenvolvimento rápido, próximo de quem entende o problema.</p>
+    </div>
+
+  </div>
+
+  <!-- Rodapé -->
+  <div class="px-16 pb-6 flex justify-between items-center z-10">
+    <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
+    <p class="text-gray-300 text-xs font-mono">19 / 34</p>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

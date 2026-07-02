@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 3 — Características Comuns dos Sistemas Legados</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
+<link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  html { font-size: 26px; }
+  body { margin:0; padding:0; background-color:#f3f4f6; overflow:hidden; font-family:'Open Sans', sans-serif; }
+  .slide-container { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; background-color:#ffffff; overflow:hidden; }
+  .font-montserrat { font-family:'Montserrat', sans-serif; }
+  .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
+  .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
+
+  .top-accent { height:12px; background:#003366; width:100%; }
+  .top-accent-secondary { height:6px; background:#0066CC; width:100%; }
+
+  .cards-grid {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:26px;
+    width:100%;
+  }
+  .leg-card {
+    background:#F8FAFC;
+    border:1px solid #E5E7EB;
+    border-top:6px solid #94A3B8;
+    border-radius:16px;
+    box-shadow:0 10px 24px -10px rgba(0,0,0,.16);
+    padding:30px 26px 26px 26px;
+    display:flex;
+    flex-direction:column;
+  }
+  .leg-card:nth-child(1) { border-top-color:#94A3B8; }
+  .leg-card:nth-child(2) { border-top-color:#60A5FA; }
+  .leg-card:nth-child(3) { border-top-color:#3B82F6; }
+  .leg-card:nth-child(4) { border-top-color:#2563EB; }
+
+  .leg-icon-wrap {
+    width:68px;
+    height:68px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#0066CC 0%,#003366 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 18px -6px rgba(0,51,102,.42);
+    margin-bottom:20px;
+  }
+  .leg-icon-wrap i { color:#ffffff; font-size:29px; }
+  .leg-title {
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    font-size:19px;
+    line-height:1.28;
+    color:#003366;
+    margin-bottom:12px;
+    min-height:50px;
+  }
+  .leg-desc {
+    font-size:15.5px;
+    line-height:1.55;
+    color:#4B5563;
+    flex:1;
+  }
+
+  .amber-banner {
+    margin-top:28px;
+    display:flex;
+    align-items:center;
+    gap:22px;
+    width:100%;
+    background:#FEF3C7;
+    border:2px solid #F59E0B;
+    border-radius:14px;
+    padding:18px 30px;
+    box-shadow:0 6px 16px -8px rgba(180,83,9,.28);
+  }
+  .amber-banner .amber-icon {
+    width:52px; height:52px; flex-shrink:0;
+    border-radius:50%;
+    background:rgba(245,158,11,0.18);
+    border:1px solid rgba(245,158,11,0.5);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .amber-banner .amber-icon i { color:#B45309; font-size:22px; }
+  .amber-banner p {
+    font-size:17px;
+    line-height:1.45;
+    color:#78350F;
+    font-weight:600;
+    margin:0;
+  }
+  .amber-banner p strong { font-weight:800; color:#92400E; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Barras de topo -->
+  <div class="top-accent"></div>
+  <div class="top-accent-secondary"></div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-16 pt-8 pb-3 z-10">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-1.5 h-9 bg-brand-secondary"></div>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">Características Comuns</h1>
+      </div>
+      <p class="text-gray-500 font-medium ml-4 text-lg">O que os sistemas legados têm em comum</p>
+    </div>
+    <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
+      <i class="fas fa-server text-xl" aria-hidden="true"></i>
+      <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">LEGADOS</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="flex-1 flex flex-col justify-center px-16 pb-6 z-10 min-h-0">
+    <div class="cards-grid">
+
+      <!-- Cartão 1 -->
+      <div class="leg-card">
+        <div class="leg-icon-wrap"><i class="fas fa-building-shield" aria-hidden="true"></i></div>
+        <p class="leg-title">Desenvolvimento centralizado na TI</p>
+        <p class="leg-desc">Manutenção, evolução e correções dependem da equipe de Tecnologia da Informação da ANTAQ.</p>
+      </div>
+
+      <!-- Cartão 2 -->
+      <div class="leg-card">
+        <div class="leg-icon-wrap"><i class="fas fa-code" aria-hidden="true"></i></div>
+        <p class="leg-title">Plataforma .NET</p>
+        <p class="leg-desc">As aplicações foram construídas sobre o framework .NET, da Microsoft.</p>
+      </div>
+
+      <!-- Cartão 3 -->
+      <div class="leg-card">
+        <div class="leg-icon-wrap"><i class="fas fa-database" aria-hidden="true"></i></div>
+        <p class="leg-title">Banco de dados SQL Server (Microsoft)</p>
+        <p class="leg-desc">Os dados ficam armazenados em bancos SQL Server, administrados pela TI da Agência.</p>
+      </div>
+
+      <!-- Cartão 4 -->
+      <div class="leg-card">
+        <div class="leg-icon-wrap"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+        <p class="leg-title">Acesso pela rede interna</p>
+        <p class="leg-desc">Disponíveis na sede, nas Unidades Regionais (UREs) ou por VPN corporativa.</p>
+      </div>
+
+    </div>
+
+    <!-- Faixa de aviso -->
+    <div class="amber-banner">
+      <div class="amber-icon"><i class="fas fa-truck-ramp-box" aria-hidden="true"></i></div>
+      <p>Em processo de migração para outra estrutura — endereços e telas podem mudar; em caso de divergência, contate-nos no <strong>SuporteGPF</strong>.</p>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <div class="px-16 pb-6 flex justify-between items-center z-10">
+    <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
+    <p class="text-gray-300 text-xs font-mono">6 / 34</p>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

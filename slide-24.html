@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AeroSFC</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16.png"/>
+<link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  html { font-size: 26px; }
+  body { margin:0; padding:0; background-color:#f3f4f6; overflow:hidden; font-family:'Open Sans', sans-serif; }
+  .slide-container { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; background-color:#ffffff; overflow:hidden; }
+  .font-montserrat { font-family:'Montserrat', sans-serif; }
+  .text-brand-primary { color:#003366; } .bg-brand-primary { background-color:#003366; }
+  .text-brand-secondary { color:#0066CC; } .bg-brand-secondary { background-color:#0066CC; }
+
+  .info-card {
+    background:#F8FAFC; border-radius:12px; padding:26px 32px;
+    box-shadow:0 2px 6px rgba(0,0,0,.06);
+  }
+  .info-card p.card-t { font-family:'Montserrat', sans-serif; font-weight:700; color:#003366; font-size:25px; margin-bottom:10px; display:flex; align-items:center; gap:16px; }
+  .info-card p.card-d { color:#4B5563; font-size:20px; line-height:1.55; }
+  .icon-badge {
+    width:44px; height:44px; border-radius:11px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:18px; color:#fff;
+    background:linear-gradient(135deg,#0066CC 0%,#003366 100%);
+  }
+
+  /* Moldura da captura do app (ícone institucional, object-fit:contain) */
+  .fig {
+    border-radius:14px; overflow:hidden; box-shadow:0 16px 30px -10px rgba(0,0,0,.32);
+    border:1px solid #E5E7EB; display:flex; flex-direction:column; background:#fff;
+  }
+  .fig-img-wrap {
+    flex:1; min-height:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:14px; background:linear-gradient(135deg,#F8FAFC 0%,#EEF4FB 100%); padding:30px;
+  }
+  .fig-img-wrap img { width:150px; height:150px; object-fit:contain; display:block; filter:drop-shadow(0 10px 18px rgba(0,51,102,.18)); }
+  .app-pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:#DBEAFE; color:#1E3A8A; font-family:'Montserrat', sans-serif; font-weight:700;
+    font-size:12px; letter-spacing:.08em; text-transform:uppercase; border-radius:999px; padding:6px 14px;
+  }
+  .app-name { font-family:'Montserrat', sans-serif; font-weight:800; font-size:26px; color:#003366; letter-spacing:-.5px; }
+  .fig figcaption {
+    background:#0F172A; color:#E2E8F0; font-size:13px; padding:9px 16px;
+    font-family:'Montserrat', sans-serif; display:flex; align-items:center; gap:9px;
+  }
+  .fig figcaption i { color:#38BDF8; }
+
+  .bg-pattern { position:absolute; bottom:-70px; right:-50px; font-size:26rem; opacity:.04; color:#003366; z-index:0; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Barras de topo -->
+  <div style="height:12px;background:#003366;width:100%;"></div>
+  <div style="height:6px;background:#0066CC;width:100%;"></div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-16 pt-8 pb-3 z-10">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <div class="w-1.5 h-9 bg-brand-secondary"></div>
+        <h1 class="text-3xl font-montserrat font-bold text-brand-primary uppercase tracking-tight">AeroSFC</h1>
+      </div>
+      <p class="text-gray-500 font-medium ml-4 text-lg">Controle das aeronaves remotamente pilotadas da fiscalização</p>
+    </div>
+    <div class="flex items-center gap-2 opacity-80 text-brand-secondary">
+      <i class="fas fa-helicopter text-xl"></i>
+      <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SISTEMAS GPF</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="flex-1 flex z-10 min-h-0 px-16 pb-6 gap-12">
+
+    <!-- ESQUERDA — Cartões -->
+    <div class="flex flex-col min-h-0 justify-between gap-6" style="flex:1.15;">
+
+      <div class="info-card" style="border-left:5px solid #0066CC;">
+        <p class="card-t"><span class="icon-badge"><i class="fas fa-helicopter"></i></span> O que faz</p>
+        <p class="card-d">Controla as <strong>aeronaves remotamente pilotadas (RPA/drones)</strong> da fiscalização: frota, pilotos habilitados e registros das operações realizadas.</p>
+      </div>
+
+      <div class="info-card" style="border-left:5px solid #2563EB;">
+        <p class="card-t"><span class="icon-badge"><i class="fas fa-graduation-cap"></i></span> Contexto</p>
+        <p class="card-d">O uso de drones <strong>amplia o alcance das inspeções</strong>, cobrindo grandes áreas e locais de difícil acesso; a Agência mantém programa de <strong>capacitação de pilotos</strong>.</p>
+      </div>
+
+      <div class="info-card" style="border-left:5px solid #003366;">
+        <p class="card-t"><span class="icon-badge"><i class="fas fa-id-badge"></i></span> Quem usa</p>
+        <p class="card-d"><strong>Pilotos habilitados</strong> e <strong>gestores da operação</strong> das aeronaves remotamente pilotadas.</p>
+      </div>
+
+    </div>
+
+    <!-- DIREITA — Ícone institucional do app AeroSFC -->
+    <div class="flex flex-col min-h-0 justify-center items-center" style="flex:1;">
+      <figure class="fig" style="margin:0; width:100%; max-height:78%;">
+        <div class="fig-img-wrap">
+          <span class="app-pill"><i class="fas fa-mobile-screen-button"></i> Aplicativo institucional</span>
+          <img src="Imagens/app-aerosfc.png" alt="Ícone do aplicativo AeroSFC — controle das aeronaves remotamente pilotadas da fiscalização"/>
+          <p class="app-name">AeroSFC</p>
+        </div>
+        <figcaption><i class="fas fa-helicopter"></i> AeroSFC — Aeronaves da Fiscalização</figcaption>
+      </figure>
+    </div>
+
+  </div>
+
+  <!-- Rodapé -->
+  <div class="px-16 pb-6 flex justify-between items-center z-10">
+    <p class="text-gray-400 text-xs font-montserrat">Curso de Introdução à Fiscalização · SFC / GPF — ANTAQ</p>
+    <p class="text-gray-300 text-xs font-mono">24 / 34</p>
+  </div>
+
+  <!-- Marca d'água decorativa -->
+  <div class="bg-pattern"><i class="fas fa-helicopter"></i></div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

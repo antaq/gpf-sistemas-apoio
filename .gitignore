@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+.claude/
+.m3shots/
+.vqa-m3shots/
+m3shots/
